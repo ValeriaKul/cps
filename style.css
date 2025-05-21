@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./fonts/TT Lakes Neue Trial Thin.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./fonts/TT Lakes Neue Trial Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes Neue";
+  src: url("./fonts/TT Lakes Neue Trial Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: "TT Lakes Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: rgba(246, 246, 246, 1);
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  height: 88px;
+  width: 100%;
+}
+
+section {
+  background-color: rgba(246, 246, 246, 1);
+  width: 100%;
+}
+
+.container {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  margin: 0 16px;
+}
+
+section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.header-title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  align-items: center;
+}
+
+.services-list ul {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin-left: 16px;
+  gap: 5px;
+}
+
+.services-list ul::-webkit-scrollbar {
+  display: none;
+}
+
+.services-list li {
+  border: 2px solid transparent;
+  color: #333;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 5px 10px;
+}
+
+.services-list li:hover,
+.services-list li.active {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 2px solid rgba(60, 248, 206, 0.5);
+}
+
+.text-about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 16px;
+  margin: 0 16px;
+}
+
+.second-paragraph {
+  display: none;
+}
+
+.btn-read-more {
+  display: flex;
+  gap: 5px;
+  margin-left: 16px;
+}
+
+.btn-read-more p {
+  font-weight: 300;
+}
