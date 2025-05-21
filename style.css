@@ -54,6 +54,12 @@ h1 {
   height: 88px;
   margin: 0 16px;
 }
+.right-side-menu,
+.left-side-menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
 
 section .container {
   display: flex;
@@ -88,6 +94,7 @@ section .container {
   cursor: pointer;
   flex-shrink: 0;
   padding: 5px 10px;
+  font-size: 18px;
 }
 
 .services-list li:hover,
@@ -95,6 +102,16 @@ section .container {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: 2px solid rgba(60, 248, 206, 0.5);
+}
+.container-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container.w768 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .text-about-us {
@@ -105,7 +122,9 @@ section .container {
   margin: 0 16px;
 }
 
-.second-paragraph {
+.second-paragraph,
+.first-slash,
+.nav-contacts {
   display: none;
 }
 
@@ -117,4 +136,53 @@ section .container {
 
 .btn-read-more p {
   font-weight: 300;
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+  .container {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .second-paragraph,
+  .first-slash {
+    display: block;
+  }
+
+  .nav-contacts {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .container.w768 {
+    display: flex;
+    flex-direction: row;
+    margin: 0 16px;
+    justify-content: space-between;
+  }
+  .text-about-us {
+    margin: 0;
+  }
+
+  .container.w768 > div:first-child {
+    width: 45%;
+  }
+
+  .container.w768 > div:last-child img {
+    width: 360px;
+    height: auto;
+    display: block;
+    margin-right: 16px;
+    border-radius: 5px;
+  }
+
+  .second-paragraph {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
