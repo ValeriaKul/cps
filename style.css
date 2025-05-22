@@ -43,6 +43,16 @@ header {
   margin: 0 auto;
 }
 
+.buttons-menu {
+  display: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 h1 {
   font-weight: 500;
   font-size: 22px;
@@ -63,9 +73,9 @@ h1 {
 }
 
 .content > .container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .header-title {
@@ -158,6 +168,7 @@ h1 {
     gap: 16px;
     align-items: center;
   }
+
   .container.w768 {
     display: flex;
     flex-direction: row;
@@ -185,5 +196,70 @@ h1 {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    display: none;
+  }
+
+  .header-title {
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+  .buttons-menu,
+  .title {
+    display: flex;
+  }
+
+  .buttons-menu {
+    gap: 25px;
+  }
+  .request,
+  .repair-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "TT Lakes Neue", sans-serif;
+    font-weight: 300;
+    border: none;
+    background-color: rgba(246, 246, 246, 1);
+  }
+  .content {
+    margin-top: 30px;
+  }
+  .container,
+  .section {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .services-list ul {
+    flex-wrap: wrap;
+  }
+
+  .container.w1120 {
+    display: flex;
+    flex-direction: row;
+    margin: 0 16px;
+    justify-content: space-between;
+  }
+
+  .container.w1120 > div:first-child {
+    width: 50%;
+  }
+
+  .container.w1120 > div:last-child img {
+    width: 530px;
+    height: auto;
+    display: block;
+    margin-right: 16px;
+    border-radius: 5px;
+  }
+
+  .second-paragraph {
+    display: block;
   }
 }
