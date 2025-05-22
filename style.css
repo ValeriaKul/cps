@@ -221,8 +221,10 @@ h1 {
     display: flex;
     align-items: center;
     gap: 5px;
+    color: #333;
     font-family: "TT Lakes Neue", sans-serif;
     font-weight: 300;
+    font-size: 18px;
     border: none;
     background-color: rgba(246, 246, 246, 1);
   }
