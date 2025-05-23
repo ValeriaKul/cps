@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>CPS</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav class="header-nav">
-          <div class="left-side-menu">
-            <a href="#"><img src="./images/burger.svg" alt="Открыть меню"></a>
+    <header class="header">
+      <div class="header__menu">
+        <nav class="header__nav">
+          <div class="header__left-side">
+            <a href="#"><img src="./images/burger.svg" alt="Открыть меню" /></a>
             <img
-              class="first-slash"
+              class="header__slash"
               src="./images/slash.svg"
               alt=""
               aria-hidden="true"
-            >
+            />
             <a href="#"
               ><img src="./images/logo-cps.svg" alt="Логотип CPS"
-            ></a>
+            /></a>
           </div>
-          <div class="right-side-menu">
-            <div class="nav-contacts">
+          <div class="header__right-side">
+            <div class="header__contacts">
               <a href="tel:+9780000000"
                 ><img src="./images/call.svg" alt="phone"
-              ></a>
+              /></a>
               <a href="mailto:mail@mail.ru"
                 ><img src="./images/chat.svg" alt="chat"
-              ></a>
+              /></a>
               <a href="#"
                 ><img src="./images/profile.svg" alt="your_profile"
-              ></a>
+              /></a>
             </div>
-            <img src="./images/slash.svg" alt="" aria-hidden="true">
-            <a href="#"><img src="./images/repair.svg" alt="Ремонт"></a>
+            <img
+              class="header__slash--center"
+              src="./images/slash.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <a href="#"><img src="./images/repair.svg" alt="Ремонт" /></a>
             <a href="#"
               ><img src="./images/checkstatus.svg" alt="Проверить статус"
-            ></a>
+            /></a>
           </div>
         </nav>
       </div>
     </header>
-    <div class="content">
-      <div class="container">
-        <div class="header-title">
-            <div class="title">
-                <img src="./images/highlight.svg" alt="highlight">
-                <h1>Услуги и сервисы</h1>
-            </div>
-          <div class="buttons-menu">
-            <button class="request">Оставить заявку <img src="./images/repair.svg" alt="Оставить заявку"></button>
-            <button class="repair-status">Статус ремонта <img src="./images/checkstatus.svg" alt="Статус ремонта"></button>
+    <main class="main">
+      <div class="main__menu">
+        <section class="main__title">
+          <div class="main__title-heading">
+            <img src="./images/highlight.svg" alt="highlight" />
+            <h1>Услуги и сервисы</h1>
           </div>
-        </div>
-        <div class="services-list">
-          <ul>
-            <li>Ремонтируемые бренды</li>
-            <li>Ремонтируемые устройства</li>
-            <li>Цены на услуги</li>
-            <li>Адреса сервисных центров</li>
-            <li>Специальные цены</li>
-            <li>Отзывы</li>
+          <div class="main__buttons">
+            <button class="button">
+              Оставить заявку
+              <img src="./images/repair.svg" alt="Оставить заявку" />
+            </button>
+            <button class="button">
+              Статус ремонта
+              <img src="./images/checkstatus.svg" alt="Статус ремонта" />
+            </button>
+          </div>
+        </section>
+        <section class="services-list" aria-label="Навигация по услугам">
+          <ul class="services-list__items">
+            <li class="services-list__item services-list__item--active">
+              Ремонтируемые бренды
+            </li>
+            <li class="services-list__item">Ремонтируемые устройства</li>
+            <li class="services-list__item">Цены на услуги</li>
+            <li class="services-list__item">Адреса сервисных центров</li>
+            <li class="services-list__item">Специальные цены</li>
+            <li class="services-list__item">Отзывы</li>
           </ul>
-        </div>
+        </section>
       </div>
-    </div>
-    <div class="section">
-      <div class="container w768 w1120">
-        <div class="container-text">
-          <div class="text-about-us">
+      <section class="about-us">
+        <div class="about-us__info">
+          <div class="about-us__text">
             <p>
               Мы являемся авторизованным сервисным центром по ремонту техники
               Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
               официальной гарантией производителя.
             </p>
-            <p class="second-paragraph">
+            <p class="about-us__paragraph--secondary">
               Мы успешно работаем с 1992 года и заслужили репутацию надежного
               партнера, что подтверждает большое количество постоянных клиентов.
               Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
               очередь, советуют нас родным и близким.
             </p>
           </div>
-          <div class="btn-read-more">
-            <img src="./images/expand.svg" alt="expand">
+          <div class="read-more">
+            <img src="./images/expand.svg" alt="expand" />
             <p>Читать далее</p>
           </div>
         </div>
         <div>
-          <img src="./images/Picture_Copy.jpg" alt="picture">
+          <img src="./images/Picture_Copy.jpg" alt="picture" />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   </body>
 </html>
