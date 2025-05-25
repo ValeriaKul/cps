@@ -12,7 +12,9 @@
       <div class="header__menu">
         <nav class="header__nav">
           <div class="header__left-side">
-            <a href="#"><img src="./images/burger.svg" alt="Открыть меню" /></a>
+            <label for="menu-toggle" class="burger-button">
+              <img src="./images/burger.svg" alt="Открыть меню" />
+            </label>
             <img
               class="header__slash"
               src="./images/slash.svg"
@@ -49,6 +51,112 @@
         </nav>
       </div>
     </header>
+    <div class="burger-wrapper">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <div class="burger-menu">
+        <div>
+          <div class="burger-menu__top">
+            <div class="burger-menu__left">
+              <label for="menu-toggle" class="burger-menu__close">
+                <img src="./images/burgerClose.svg" alt="close" />
+              </label>
+              <img src="./images/logo-cps.svg" alt="logo" />
+            </div>
+            <img src="./images/search.svg" alt="search" />
+          </div>
+          <nav class="burger-menu__nav">
+            <ul class="burger-menu__list">
+              <li class="burger-menu__item burger-menu__item--active">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Ремонт техники</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Услуги и сервисы</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Корпоративным клиентам</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Продавцам техники</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Партнерам</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Производителям</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Наши сервисные центры</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="./images/highlight.svg"
+                  alt="highlight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <div class="burger-menu__contacts">
+            <div class="burger-menu__icons">
+              <img src="./images/call.svg" alt="Call" />
+              <img src="./images/chat.svg" alt="Chat" />
+              <img src="./images/profile.svg" alt="Profile" />
+            </div>
+            <a class="burger-menu__mail" href="mailto:mail@cps.com"
+              >mail@cps.com</a
+            >
+            <a class="burger-menu__phone" href="tel:+88008908900"
+              >8 800 890 8900</a
+            >
+          </div>
+          <div class="burger-menu__languages">
+            <button class="burger-menu__button burger-menu__button--active">
+              RU
+            </button>
+            <button class="burger-menu__button">EN</button>
+            <button class="burger-menu__button">CH</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <main class="main">
       <div class="main__menu">
         <section class="main__title">
