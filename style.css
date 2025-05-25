@@ -309,6 +309,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .burger-button,
 .burger-menu__left img,
