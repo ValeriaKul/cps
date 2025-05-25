@@ -169,7 +169,6 @@ body {
 
 .about-us > div:last-child img {
   width: 100%;
-  max-width: 530px;
   height: auto;
   display: block;
   margin-right: 16px;
@@ -188,12 +187,6 @@ body {
   .header__slash {
     display: block;
   }
-
-  /* .header, .main__menu,
-  .about-us {
-    max-width: 768px;
-    margin: 0 auto;
-  } */
 
   .main__title-heading h1 {
     font-size: 30px;
@@ -218,11 +211,16 @@ body {
     gap: 25px;
   }
 
+  .about-us > div:last-child {
+    width: 50%;
+  }
+
   .about-us > div:last-child img {
-    width: 360px;
+    width: 100%;
     height: auto;
+    max-width: 100%;
     display: block;
-    margin-right: 16px;
+    margin: 0 auto;
     border-radius: 5px;
   }
 
@@ -258,12 +256,6 @@ body {
     font-weight: 300;
   }
 
-  /* .header, .main__menu,
-  .about-us {
-    max-width: 1120px;
-    margin: 0 auto;
-  } */
-
   .services-list__items {
     flex-wrap: wrap;
   }
@@ -280,12 +272,16 @@ body {
   .about-us__text {
     width: 100%;
   }
+  .about-us > div:last-child {
+    width: 50%;
+  }
 
   .about-us > div:last-child img {
-    width: 530px;
+    width: 100%;
     height: auto;
+    max-width: 100%;
     display: block;
-    margin-right: 16px;
+    margin: 0 auto;
     border-radius: 5px;
   }
 
