@@ -189,11 +189,11 @@ body {
     display: block;
   }
 
-  .header, .main__menu,
+  /* .header, .main__menu,
   .about-us {
     max-width: 768px;
     margin: 0 auto;
-  }
+  } */
 
   .main__title-heading h1 {
     font-size: 30px;
@@ -258,11 +258,11 @@ body {
     font-weight: 300;
   }
 
-  .header, .main__menu,
+  /* .header, .main__menu,
   .about-us {
     max-width: 1120px;
     margin: 0 auto;
-  }
+  } */
 
   .services-list__items {
     flex-wrap: wrap;
@@ -272,7 +272,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    gap: 6%;
+    gap: 20px;
   }
   .about-us__info {
     width: 47%;
