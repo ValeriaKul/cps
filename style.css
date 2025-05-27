@@ -240,12 +240,11 @@ body {
 }
 
 @media (min-width: 1120px) {
+  body{
+    gap: 42px;
+  }
   .header {
     display: none;
-  }
-
-  .main {
-    margin-top: 42px;
   }
 
   .main__title {
