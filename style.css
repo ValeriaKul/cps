@@ -240,7 +240,7 @@ body {
 }
 
 @media (min-width: 1120px) {
-  body{
+  body {
     gap: 42px;
   }
   .header {
@@ -294,8 +294,7 @@ body {
     display: block;
   }
 }
-
-/* burger menu */
+/*?------------------- burger menu --------------------*/
 .burger-menu {
   position: fixed;
   top: 0;
@@ -308,7 +307,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   overflow-y: auto;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 .burger-button,
@@ -351,10 +350,9 @@ body {
 }
 .burger-menu__icon {
   height: 32px;
-   opacity: 0;
+  opacity: 0;
   transition: opacity 0.3s;
 }
-
 .burger-menu__icons {
   display: flex;
   gap: 16px;
@@ -384,7 +382,7 @@ body {
   font-weight: 300;
   border: none;
   background-color: white;
-  color: rgba(27, 28, 33, 1)
+  color: rgba(27, 28, 33, 1);
 }
 .menu-toggle {
   display: none;
@@ -400,12 +398,9 @@ body {
   color: #000;
   transition: color 0.3s;
 }
-.burger-menu__item--active .burger-menu__link {
+.burger-menu__item--active .burger-menu__link,
+.burger-menu__button--active {
   color: rgba(126, 126, 130, 1);
-}
-
-.menu-toggle {
-  display: none;
 }
 .burger-wrapper .burger-menu {
   /* transform: translateX(-100%);
@@ -415,34 +410,6 @@ body {
   /* transform: translateX(0); */
 }
 /*! ----------------------------------------- */
-.burger-menu__item {
-  transition: filter 0.3s, opacity 0.3s;
-}
-.burger-menu__item:hover {
-  filter: brightness(0.85);
-  opacity: 0.7;
-}
-
-.button {
-  transition: filter 0.3s, opacity 0.3s;
-}
-
-.button:hover,
-.button:focus {
-  filter: brightness(0.85);
-  opacity: 0.7;
-}
-
-.burger-menu__button {
-  transition: filter 0.3s, opacity 0.3s;
-}
-
-.burger-menu__button:hover,
-.burger-menu__button:focus {
-  filter: brightness(0.85);
-  opacity: 0.7;
-}
-
 .burger-menu__link {
   transition: filter 0.3s, opacity 0.3s, color 0.3s;
 }
@@ -451,7 +418,7 @@ body {
 .burger-menu__link:focus {
   filter: brightness(0.85);
   opacity: 0.7;
-  color: #1a1a1a;
+  color: rgba(126, 126, 130, 1);
 }
 
 .burger-menu__icon {
