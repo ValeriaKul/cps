@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/brands.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <title>CPS</title>
   </head>
   <body>
@@ -13,39 +18,39 @@
         <nav class="header__nav">
           <div class="header__left-side">
             <label for="menu-toggle" class="burger-button">
-              <img src="./images/burger.svg" alt="open menu" />
+              <img src="./images/icons/burger.svg" alt="open menu" />
             </label>
             <img
               class="header__slash"
-              src="./images/slash.svg"
+              src="./images/icons/slash.svg"
               alt="slash"
               aria-hidden="true"
             />
             <a href="#"
-              ><img src="./images/logo-cps.svg" alt="Логотип CPS"
+              ><img src="./images/icons/logo-cps.svg" alt="Логотип CPS"
             /></a>
           </div>
           <div class="header__right-side">
             <div class="header__contacts">
               <a href="tel:+9780000000"
-                ><img src="./images/call.svg" alt="phone"
+                ><img src="./images/icons/call.svg" alt="phone"
               /></a>
               <a href="mailto:mail@mail.ru"
-                ><img src="./images/chat.svg" alt="chat"
+                ><img src="./images/icons/chat.svg" alt="chat"
               /></a>
               <a href="#"
-                ><img src="./images/profile.svg" alt="your_profile"
+                ><img src="./images/icons/profile.svg" alt="your_profile"
               /></a>
             </div>
             <img
               class="header__slash--center"
-              src="./images/slash.svg"
+              src="./images/icons/slash.svg"
               alt=""
               aria-hidden="true"
             />
-            <a href="#"><img src="./images/repair.svg" alt="Ремонт" /></a>
+            <a href="#"><img src="./images/icons/repair.svg" alt="Ремонт" /></a>
             <a href="#"
-              ><img src="./images/checkstatus.svg" alt="Проверить статус"
+              ><img src="./images/icons/checkstatus.svg" alt="Проверить статус"
             /></a>
           </div>
         </nav>
@@ -58,17 +63,17 @@
           <div class="burger-menu__top">
             <div class="burger-menu__left">
               <label for="menu-toggle" class="burger-menu__close">
-                <img src="./images/burgerClose.svg" alt="close" />
+                <img src="./images/icons/burgerClose.svg" alt="close" />
               </label>
-              <img src="./images/logo-cps.svg" alt="logo" />
+              <img src="./images/icons/logo-cps.svg" alt="logo" />
             </div>
-            <img src="./images/search.svg" alt="search" />
+            <img src="./images/icons/search.svg" alt="search" />
           </div>
           <nav class="burger-menu__nav">
             <ul class="burger-menu__list">
               <li class="burger-menu__item burger-menu__item--active">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -76,7 +81,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -84,7 +89,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -92,7 +97,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -100,7 +105,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -108,7 +113,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -116,7 +121,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -124,7 +129,7 @@
               </li>
               <li class="burger-menu__item">
                 <img
-                  src="./images/highlight.svg"
+                  src="./images/icons/highlight.svg"
                   alt="highlight"
                   class="burger-menu__icon"
                 />
@@ -136,9 +141,9 @@
         <div>
           <div class="burger-menu__contacts">
             <div class="burger-menu__icons">
-              <img src="./images/call.svg" alt="Call" />
-              <img src="./images/chat.svg" alt="Chat" />
-              <img src="./images/profile.svg" alt="Profile" />
+              <img src="./images/icons/call.svg" alt="Call" />
+              <img src="./images/icons/chat.svg" alt="Chat" />
+              <img src="./images/icons/profile.svg" alt="Profile" />
             </div>
             <a class="burger-menu__mail" href="mailto:mail@cps.com"
               >mail@cps.com</a
@@ -157,61 +162,11 @@
         </div>
       </div>
     </div>
-    <main class="main">
-      <div class="main__menu">
-        <section class="main__title">
-          <div class="main__title-heading">
-            <img src="./images/highlight.svg" alt="highlight" />
-            <h1>Услуги и сервисы</h1>
-          </div>
-          <div class="main__buttons">
-            <button class="button">
-              Оставить заявку
-              <img src="./images/repair.svg" alt="Оставить заявку" />
-            </button>
-            <button class="button">
-              Статус ремонта
-              <img src="./images/checkstatus.svg" alt="Статус ремонта" />
-            </button>
-          </div>
-        </section>
-        <section class="services-list" aria-label="Навигация по услугам">
-          <ul class="services-list__items">
-            <li class="services-list__item services-list__item--active">
-              Ремонтируемые бренды
-            </li>
-            <li class="services-list__item">Ремонтируемые устройства</li>
-            <li class="services-list__item">Цены на услуги</li>
-            <li class="services-list__item">Адреса сервисных центров</li>
-            <li class="services-list__item">Специальные цены</li>
-            <li class="services-list__item">Отзывы</li>
-          </ul>
-        </section>
-      </div>
-      <section class="about-us" aria-label="Information about the company">
-        <div class="about-us__info">
-          <div class="about-us__text">
-            <p>
-              Мы являемся авторизованным сервисным центром по ремонту техники
-              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
-              официальной гарантией производителя.
-            </p>
-            <p class="about-us__paragraph--secondary">
-              Мы успешно работаем с 1992 года и заслужили репутацию надежного
-              партнера, что подтверждает большое количество постоянных клиентов.
-              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
-              очередь, советуют нас родным и близким.
-            </p>
-          </div>
-          <div class="read-more">
-            <img src="./images/expand.svg" alt="expand" />
-            <p>Читать далее</p>
-          </div>
-        </div>
-        <div>
-          <img src="./images/Picture_Copy.jpg" alt="picture" />
-        </div>
-      </section>
-    </main>
+    <main id="main-content" class="main"></main>
+    <script type="module">
+      import { register } from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs";
+      register();
+    </script>
+    <script src="script.js"></script>
   </body>
 </html>
