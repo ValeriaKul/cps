@@ -195,6 +195,10 @@ body {
     display: block;
   }
 
+  .header__nav {
+    padding: 0 24px;
+  }
+
   .main__title-heading h1 {
     font-size: 30px;
   }
