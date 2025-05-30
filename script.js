@@ -61,8 +61,6 @@ function setupButtonToggles() {
 }
 
 function loadPage(url) {
-  console.log("Загружаем страницу:", url);
-
   fetch(url)
     .then((res) => {
       if (!res.ok) throw new Error("Ошибка загрузки");
@@ -70,6 +68,20 @@ function loadPage(url) {
     })
     .then((html) => {
       document.getElementById("main-content").innerHTML = html;
+
+      // 👇 Вставляем заново обработчик клика на логотип в бургер-меню
+      const burgerLogo = document.querySelector(".burger-logo");
+      if (burgerLogo) {
+        burgerLogo.addEventListener("click", (e) => {
+          e.preventDefault();
+          loadPage("pages/main.html");
+
+          const menuToggle = document.querySelector("#menu-toggle");
+          if (menuToggle) menuToggle.checked = false;
+        });
+      }
+
+      initReadMore();
 
       setTimeout(() => {
         if (url.includes("brands.html")) {
@@ -89,7 +101,6 @@ function loadPage(url) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.getElementById("main-content");
-
   main.addEventListener("click", function (event) {
     const target = event.target.closest("[data-page]");
     if (target) {
@@ -97,6 +108,38 @@ document.addEventListener("DOMContentLoaded", () => {
       const page = target.getAttribute("data-page");
       loadPage(page);
     }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const main = document.getElementById("main-content");
+
+    main.addEventListener("click", function (event) {
+      const target = event.target.closest("[data-page]");
+      if (target) {
+        event.preventDefault();
+        const page = target.getAttribute("data-page");
+        loadPage(page);
+      }
+    });
+
+    const burgerLogo = document.querySelector(".burger-logo");
+    if (burgerLogo) {
+      burgerLogo.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadPage("pages/main.html");
+        // window.scrollTo(0, 0);
+      });
+    }
+
+    initSwiperIfMobile();
+    updateButtonsVisibility();
+    setupButtonToggles();
+    loadPage("pages/main.html");
+
+    window.addEventListener("resize", () => {
+      initSwiperIfMobile();
+      updateButtonsVisibility();
+    });
   });
 
   initSwiperIfMobile();
@@ -115,3 +158,50 @@ const menuToggle = document.querySelector("#menu-toggle");
 menuToggle.addEventListener("change", () => {
   document.body.classList.toggle("menu-open", menuToggle.checked);
 });
+
+function initReadMore() {
+  const aboutUsSection = document.querySelector(".about-us");
+  const secondParagraph = document.querySelector(
+    ".about-us__paragraph--secondary"
+  );
+  const readMoreBtn = document.querySelector(".about-us .read-more");
+
+  if (!aboutUsSection || !secondParagraph || !readMoreBtn) return;
+
+  function updateParagraphVisibility() {
+    const width = window.innerWidth;
+
+    if (width >= 1120) {
+      secondParagraph.style.display = "block";
+      //   readMoreBtn.style.display = "none";
+    } else if (width >= 768) {
+      secondParagraph.style.display = "";
+      //   readMoreBtn.style.display = "flex";
+    } else {
+      secondParagraph.style.display = aboutUsSection.classList.contains(
+        "expanded"
+      )
+        ? "block"
+        : "none";
+      //   readMoreBtn.style.display = "flex";
+    }
+  }
+
+  readMoreBtn.addEventListener("click", () => {
+    aboutUsSection.classList.toggle("expanded");
+
+    const isExpanded = aboutUsSection.classList.contains("expanded");
+
+    readMoreBtn.querySelector("p").textContent = isExpanded
+      ? "Скрыть"
+      : "Читать далее";
+    readMoreBtn.querySelector("img").src = isExpanded
+      ? "./images/icons/expandClose.svg"
+      : "./images/icons/expand.svg";
+
+    updateParagraphVisibility();
+  });
+
+  window.addEventListener("resize", updateParagraphVisibility);
+  updateParagraphVisibility();
+}
