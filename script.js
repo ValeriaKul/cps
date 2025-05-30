@@ -1,24 +1,27 @@
-let swiperInstance = null;
+let swiperInstances = [];
 
-function initSwiperIfMobile() {
+function initAllSwipers() {
+
+  swiperInstances.forEach((instance) => instance.destroy(true, true));
+  swiperInstances = [];
+
   const isMobile = window.innerWidth < 768;
-  const sliderEl = document.querySelector(".brands-slider");
+  const sliders = document.querySelectorAll(".swiper");
 
-  if (!sliderEl) return;
-
-  if (isMobile && !swiperInstance) {
-    swiperInstance = new Swiper(sliderEl, {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      pagination: {
-        el: sliderEl.querySelector(".swiper-pagination"),
-        clickable: true,
-      },
+  sliders.forEach((sliderEl) => {
+    const paginationEl = sliderEl.querySelector(".swiper-pagination");
+    const instance = new Swiper(sliderEl, {
+      slidesPerView: isMobile ? "auto" : 1,
+      spaceBetween: isMobile ? 16 : 0,
+      pagination: paginationEl
+        ? {
+            el: paginationEl,
+            clickable: true,
+          }
+        : undefined,
     });
-  } else if (!isMobile && swiperInstance) {
-    swiperInstance.destroy(true, true);
-    swiperInstance = null;
-  }
+    swiperInstances.push(instance);
+  });
 }
 
 function updateButtonsVisibility() {
@@ -67,9 +70,14 @@ function loadPage(url) {
       return res.text();
     })
     .then((html) => {
-      document.getElementById("main-content").innerHTML = html;
+      const container = document.getElementById("main-content");
+      container.innerHTML = html;
 
-      // 👇 Вставляем заново обработчик клика на логотип в бургер-меню
+      initReadMore();
+      setupButtonToggles();
+      updateButtonsVisibility();
+      initAllSwipers();
+
       const burgerLogo = document.querySelector(".burger-logo");
       if (burgerLogo) {
         burgerLogo.addEventListener("click", (e) => {
@@ -77,87 +85,18 @@ function loadPage(url) {
           loadPage("pages/main.html");
 
           const menuToggle = document.querySelector("#menu-toggle");
-          if (menuToggle) menuToggle.checked = false;
+          if (window.innerWidth < 1120 && menuToggle) {
+            menuToggle.checked = false;
+            document.body.classList.remove("menu-open");
+          }
         });
       }
-
-      initReadMore();
-
-      setTimeout(() => {
-        if (url.includes("brands.html")) {
-          initSwiperIfMobile();
-          updateButtonsVisibility();
-          setupButtonToggles();
-        }
-      }, 50);
     })
     .catch((err) => {
       console.error("Ошибка при загрузке страницы:", err);
-      document.getElementById(
-        "main-content"
-      ).innerHTML = `<p>${err.message}</p>`;
+      document.getElementById("main-content").innerHTML = `<p>${err.message}</p>`;
     });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const main = document.getElementById("main-content");
-  main.addEventListener("click", function (event) {
-    const target = event.target.closest("[data-page]");
-    if (target) {
-      event.preventDefault();
-      const page = target.getAttribute("data-page");
-      loadPage(page);
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const main = document.getElementById("main-content");
-
-    main.addEventListener("click", function (event) {
-      const target = event.target.closest("[data-page]");
-      if (target) {
-        event.preventDefault();
-        const page = target.getAttribute("data-page");
-        loadPage(page);
-      }
-    });
-
-    const burgerLogo = document.querySelector(".burger-logo");
-    if (burgerLogo) {
-      burgerLogo.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadPage("pages/main.html");
-        // window.scrollTo(0, 0);
-      });
-    }
-
-    initSwiperIfMobile();
-    updateButtonsVisibility();
-    setupButtonToggles();
-    loadPage("pages/main.html");
-
-    window.addEventListener("resize", () => {
-      initSwiperIfMobile();
-      updateButtonsVisibility();
-    });
-  });
-
-  initSwiperIfMobile();
-  updateButtonsVisibility();
-  setupButtonToggles();
-  loadPage("pages/main.html");
-
-  window.addEventListener("resize", () => {
-    initSwiperIfMobile();
-    updateButtonsVisibility();
-  });
-});
-
-const menuToggle = document.querySelector("#menu-toggle");
-
-menuToggle.addEventListener("change", () => {
-  document.body.classList.toggle("menu-open", menuToggle.checked);
-});
 
 function initReadMore() {
   const aboutUsSection = document.querySelector(".about-us");
@@ -173,23 +112,19 @@ function initReadMore() {
 
     if (width >= 1120) {
       secondParagraph.style.display = "block";
-      //   readMoreBtn.style.display = "none";
     } else if (width >= 768) {
       secondParagraph.style.display = "";
-      //   readMoreBtn.style.display = "flex";
     } else {
       secondParagraph.style.display = aboutUsSection.classList.contains(
         "expanded"
       )
         ? "block"
         : "none";
-      //   readMoreBtn.style.display = "flex";
     }
   }
 
   readMoreBtn.addEventListener("click", () => {
     aboutUsSection.classList.toggle("expanded");
-
     const isExpanded = aboutUsSection.classList.contains("expanded");
 
     readMoreBtn.querySelector("p").textContent = isExpanded
@@ -205,3 +140,30 @@ function initReadMore() {
   window.addEventListener("resize", updateParagraphVisibility);
   updateParagraphVisibility();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.getElementById("main-content");
+
+  main.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-page]");
+    if (target) {
+      event.preventDefault();
+      const page = target.getAttribute("data-page");
+      loadPage(page);
+    }
+  });
+
+  const menuToggle = document.querySelector("#menu-toggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("change", () => {
+      document.body.classList.toggle("menu-open", menuToggle.checked);
+    });
+  }
+
+  loadPage("pages/main.html");
+
+  window.addEventListener("resize", () => {
+    updateButtonsVisibility();
+    initAllSwipers();
+  });
+});
