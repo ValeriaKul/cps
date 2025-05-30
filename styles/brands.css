@@ -64,6 +64,9 @@
 .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 0;
 }
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
 
 .swiper-pagination-bullet-active {
   background-color: rgba(181, 182, 188, 1);
@@ -149,9 +152,23 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1581px) {
+  .brands-slider.limited + .button__read {
+    display: flex;
+  }
+
+  .brands-slider:not(.limited) + .button__close {
+    display: flex;
+  }
+}
 @media (min-width: 1572px) {
   .brands-slider.limited {
     max-height: calc(72px * 2 + 16px);
     overflow: hidden;
   }
+  .button__read,
+  .button__close {
+    display: none !important;
+  }
 }
+

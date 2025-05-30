@@ -300,6 +300,7 @@ body {
   }
 }
 /*?------------------- burger menu --------------------*/
+
 .burger-menu {
   position: fixed;
   top: 0;
@@ -435,4 +436,16 @@ body {
 .burger-menu__item:hover .burger-menu__icon,
 .burger-menu__item:focus-within .burger-menu__icon {
   opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 998;
+  display: none;
+}
+
+body.menu-open .overlay {
+  display: block;
 }

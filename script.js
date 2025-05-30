@@ -21,8 +21,44 @@ function initSwiperIfMobile() {
   }
 }
 
-window.addEventListener("resize", initSwiperIfMobile);
-document.addEventListener("DOMContentLoaded", initSwiperIfMobile);
+function updateButtonsVisibility() {
+  const slider = document.querySelector(".brands-slider");
+  const btnRead = document.querySelector(".button__read");
+  const btnClose = document.querySelector(".button__close");
+
+  if (!slider || !btnRead || !btnClose) return;
+
+  const isLimited = slider.classList.contains("limited");
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 768 && screenWidth < 1582) {
+    btnRead.style.display = isLimited ? "flex" : "none";
+    btnClose.style.display = isLimited ? "none" : "flex";
+  } else {
+    btnRead.style.display = "none";
+    btnClose.style.display = "none";
+  }
+}
+
+function setupButtonToggles() {
+  document.addEventListener("click", function (e) {
+    const readMoreBtn = e.target.closest(".button__read");
+    const closeBtn = e.target.closest(".button__close");
+    const slider = document.querySelector(".brands-slider");
+
+    if (!slider) return;
+
+    if (readMoreBtn) {
+      slider.classList.remove("limited");
+    }
+
+    if (closeBtn) {
+      slider.classList.add("limited");
+    }
+
+    updateButtonsVisibility();
+  });
+}
 
 function loadPage(url) {
   console.log("Загружаем страницу:", url);
@@ -38,6 +74,8 @@ function loadPage(url) {
       setTimeout(() => {
         if (url.includes("brands.html")) {
           initSwiperIfMobile();
+          updateButtonsVisibility();
+          setupButtonToggles();
         }
       }, 50);
     })
@@ -51,6 +89,7 @@ function loadPage(url) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.getElementById("main-content");
+
   main.addEventListener("click", function (event) {
     const target = event.target.closest("[data-page]");
     if (target) {
@@ -60,26 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  initSwiperIfMobile();
+  updateButtonsVisibility();
+  setupButtonToggles();
   loadPage("pages/main.html");
-  window.addEventListener("resize", initSwiperIfMobile);
+
+  window.addEventListener("resize", () => {
+    initSwiperIfMobile();
+    updateButtonsVisibility();
+  });
 });
 
-document.addEventListener("click", function (e) {
-  const readMoreBtn = e.target.closest(".button__read");
-  const closeBtn = e.target.closest(".button__close");
-  const slider = document.querySelector(".brands-slider");
+const menuToggle = document.querySelector("#menu-toggle");
 
-  if (!slider) return;
-
-  if (readMoreBtn) {
-    slider.classList.remove("limited");
-    document.querySelector(".button__read").style.display = "none";
-    document.querySelector(".button__close").style.display = "flex";
-  }
-
-  if (closeBtn) {
-    slider.classList.add("limited");
-    document.querySelector(".button__close").style.display = "none";
-    document.querySelector(".button__read").style.display = "flex";
-  }
+menuToggle.addEventListener("change", () => {
+  document.body.classList.toggle("menu-open", menuToggle.checked);
 });
