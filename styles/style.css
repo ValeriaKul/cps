@@ -169,9 +169,18 @@ body {
   margin: 0 16px;
 }
 
-.about-us__paragraph--secondary,
 .header__contacts {
   display: none;
+}
+
+.about-us__paragraph--secondary {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.about-us.expanded .about-us__paragraph--secondary {
+  max-height: 500px;
 }
 
 .about-us > div:last-child img {
@@ -188,6 +197,7 @@ body {
   gap: 5px;
   margin-left: 16px;
   font-weight: 300;
+  cursor: pointer;
 }
 
 @media (min-width: 767px) and (max-width: 1119px) {
@@ -297,7 +307,11 @@ body {
 
   .about-us__paragraph--secondary {
     display: block;
+     max-height: none !important;
+    overflow: visible !important;
+      -webkit-line-clamp: unset !important;
   }
+
 }
 /*?------------------- burger menu --------------------*/
 
@@ -449,3 +463,53 @@ body {
 body.menu-open .overlay {
   display: block;
 }
+@media (min-width: 1140px) {
+  .burger-wrapper {
+    display: flex;
+  }
+
+  .burger-menu {
+    position: relative;
+    transform: none !important;
+    width: 320px;
+    height: auto;
+    box-shadow: none;
+    z-index: auto;
+  }
+
+  .burger-menu__top {
+    padding: 30px 31px 0 22px;
+  }
+
+  #menu-toggle,
+  .burger-button,
+  .burger-menu__close {
+    display: none !important;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main {
+    width: calc(100% - 320px);
+  }
+
+  .overlay {
+    display: none !important;
+  }
+}
+
+
+/* !кнопка читать далее */
+.about-us__paragraph--secondary {
+  display: none;
+}
+
+.about-us.expanded .about-us__paragraph--secondary {
+  display: block;
+}
+
+
+
