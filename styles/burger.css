@@ -1,0 +1,149 @@
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 16px 52px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.burger-button,
+.burger-menu__left img,
+.burger-menu__top img,
+.burger-menu__icons img,
+.burger-menu__icon,
+.burger-menu__button {
+  cursor: pointer;
+}
+.burger-menu__nav {
+  padding-top: 46px;
+}
+.burger-menu__top,
+.burger-menu__left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.burger-menu__top {
+  padding: 16px 24px 0 24px;
+}
+.burger-menu__left {
+  gap: 16px;
+}
+.burger-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.burger-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: "TT Lakes Neue", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+.burger-menu__icon {
+  height: 32px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.burger-menu__icons {
+  display: flex;
+  gap: 16px;
+}
+.burger-menu__contacts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  gap: 16px;
+}
+.burger-menu__mail {
+  font-weight: 300;
+}
+.burger-menu__phone {
+  font-family: "TT Lakes", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+.burger-menu__languages {
+  display: flex;
+  gap: 7px;
+  padding: 40px 0 32px 24px;
+}
+.burger-menu__button {
+  font-family: "TT Lakes Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  background-color: white;
+  color: rgba(27, 28, 33, 1);
+}
+.menu-toggle {
+  display: none;
+}
+.burger-menu__icon {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.burger-menu__item--active .burger-menu__icon {
+  opacity: 1;
+}
+.burger-menu__link {
+  color: #000;
+  transition: color 0.3s;
+}
+.burger-menu__item--active .burger-menu__link,
+.burger-menu__button--active {
+  color: rgba(126, 126, 130, 1);
+}
+.burger-wrapper .burger-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.burger-wrapper #menu-toggle:checked + .burger-menu {
+  transform: translateX(0);
+}
+
+.burger-menu__link {
+  transition: filter 0.3s, opacity 0.3s, color 0.3s;
+}
+
+.burger-menu__link:hover,
+.burger-menu__link:focus {
+  filter: brightness(0.85);
+  opacity: 0.7;
+  color: rgba(126, 126, 130, 1);
+}
+
+.burger-menu__icon {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.burger-menu__item--active .burger-menu__icon,
+.burger-menu__item:hover .burger-menu__icon,
+.burger-menu__item:focus-within .burger-menu__icon {
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 998;
+  display: none;
+}
+
+body.menu-open .overlay {
+  display: block;
+}

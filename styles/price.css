@@ -1,0 +1,119 @@
+.prices__header {
+  display: none;
+}
+
+.swiper-wrapper.price-wrapper {
+  gap: 16px;
+}
+
+.swiper.prices-slider {
+  padding: 0 8px;
+}
+
+.swiper-slide.prices-slide {
+  width: 228px;
+  height: 168px;
+  padding: 16px;
+  margin: 0 !important;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 6px;
+}
+
+.slide__label,
+.slide__value {
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+.slide__label {
+  color: rgba(126, 126, 130, 1);
+}
+.slide__value {
+  color: rgba(27, 28, 33, 1);
+}
+
+.prices-slide__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.slide__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  width: 119px;
+  height: 32px;
+  background-color: rgba(255, 62, 121, 1);
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 1);
+  font-family: "TT Lakes Neue";
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "TT Lakes Neue";
+  padding: 0 16px 40px;
+}
+.information__text {
+  color: rgba(27, 28, 33, 1);
+  letter-spacing: 0.2px;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "TT Lakes Neue";
+  padding: 24px 16px 40px;
+}
+
+.information__text {
+  color: rgba(27, 28, 33, 1);
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+}
+
+.information__button {
+  font-family: "TT Lakes Neue";
+  display: inline;
+  gap: 8px;
+  background-color: rgba(246, 246, 246, 1);
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  max-width: 100%;
+  cursor: pointer;
+  text-align: start;
+}
+
+.information__button--text {
+  display: inline;
+  text-align: left;
+  word-break: break-word;
+  font-size: 16px;
+}
+
+.information__button--img-go {
+  display: inline;
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+
+}
