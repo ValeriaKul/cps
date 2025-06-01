@@ -12,7 +12,7 @@ const html = `
   </div>
   <!-- !слайдер! -->
   <div class="swiper brands-slider limited">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-wrapper__brands">
       <div class="swiper-slide brands-slider__slide">
         <div class="brands-slider__image brand-card">
           <img src="./images/logo_brands/Lenovo.svg" alt="Lenovo" />
