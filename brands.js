@@ -82,11 +82,11 @@ const html = `
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  <button class="read-more button__read">
+  <button class="read-more button__read button--hidden">
     <img src="./images/icons/expand.svg" alt="expand" />
     <p>Показать все</p>
   </button>
-   <button class="read-more button__close">
+   <button class="read-more button__close button--hidden">
     <img src="./images/icons/expandClose.svg" alt="close" />
     <p>Скрыть</p>
   </button>

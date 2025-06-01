@@ -21,11 +21,15 @@ export function updateButtonsVisibility(sliderSelector = ".brands-slider") {
   const isLimited = slider.classList.contains("limited");
   const screenWidth = window.innerWidth;
 
+  btnRead.classList.add("button--hidden");
+  btnClose.classList.add("button--hidden");
+
   if (screenWidth >= 768 && screenWidth < 1582) {
-    btnRead.style.display = isLimited ? "flex" : "none";
-    btnClose.style.display = isLimited ? "none" : "flex";
-  } else {
-    btnRead.style.display = "none";
-    btnClose.style.display = "none";
+    if (isLimited) {
+      btnRead.classList.remove("button--hidden");
+    } else {
+      btnClose.classList.remove("button--hidden");
+    }
   }
 }
+
