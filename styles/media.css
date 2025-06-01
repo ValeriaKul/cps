@@ -110,7 +110,7 @@
   }
   .swiper-wrapper.swiper-wrapper__brands,
   .swiper-wrapper.swiper-wrapper__devices {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
     gap: 16px 24px;
   }

@@ -7,6 +7,17 @@ import {initSwiper} from './initSwiper.js'
 
 renderMainPage();
 setupBurgerMenu();
+loadSwiper();
+
+function loadSwiper () {
+initSwiper(".brands-slider");
+initSwiper(".devices-slider");
+initSwiper(".prices-slider");
+}
+
+window.addEventListener("resize", () => {
+  loadSwiper();
+});
 
 document.body.addEventListener('click', (e) => {
   const item = e.target.closest('[data-page]');
