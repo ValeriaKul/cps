@@ -70,7 +70,7 @@
 
 }
 
-.services-list__item:hover,
+.services-list__item:hover, .services-list__item:focus,
 .services-list__item--active {
   background-color: white;
   border-radius: 5px;
@@ -116,12 +116,4 @@
   margin-right: 16px;
   border-radius: 5px;
   margin: 0 auto;
-}
-
-.read-more {
-  display: flex;
-  gap: 5px;
-  margin-left: 16px;
-  font-weight: 500;
-  cursor: pointer;
 }

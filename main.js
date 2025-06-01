@@ -19,9 +19,7 @@ const html = `<div class="main__menu">
   <section class="services-list" aria-label="Навигация по услугам">
     <ul class="services-list__items">
       <li
-        class="services-list__item services-list__item--active"
-        data-page="brands"
-      >
+        class="services-list__item" data-page="brands">
         Ремонтируемые бренды
       </li>
       <li class="services-list__item" data-page="devices">

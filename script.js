@@ -3,6 +3,7 @@ import { renderBrandsPage } from './brands.js';
 import { renderDevicesPage } from './devices.js';
 import { renderPricePage } from './price.js';
 import { setupBurgerMenu } from './burger.js';
+import {initSwiper} from './initSwiper.js'
 
 renderMainPage();
 setupBurgerMenu();
@@ -43,3 +44,9 @@ if (menuToggle) {
     document.body.classList.toggle("menu-open", menuToggle.checked);
   });
 }
+
+
+window.addEventListener("load", initSwiper());
+window.addEventListener("resize", initSwiper());
+
+

@@ -2,6 +2,10 @@
   .content {
     gap: 40px;
   }
+  .button__read,
+  .button__close {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -129,10 +133,12 @@
 
   .brands-slider.limited + .button__read {
     display: flex;
+    font-family: "TT Lakes";
   }
 
   .brands-slider:not(.limited) + .button__close {
     display: flex;
+    font-family: "TT Lakes";
   }
 
   /* !price! */
@@ -291,6 +297,6 @@
 @media (min-width: 1572px) {
   .button__read,
   .button__close {
-    display: none !important;
+    display: none;
   }
 }
