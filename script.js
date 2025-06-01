@@ -4,6 +4,7 @@ import { renderDevicesPage } from "./devices.js";
 import { renderPricePage } from "./price.js";
 import { setupBurgerMenu } from "./burger.js";
 import { initSwiper } from "./initSwiper.js";
+import { updateButtonsVisibility } from "./readMoreToggle.js";
 
 renderMainPage();
 setupBurgerMenu();
@@ -18,29 +19,32 @@ function renderPage(page) {
   switch (page) {
     case "main":
       renderMainPage();
-      
       break;
+
     case "brands":
       renderBrandsPage();
       setTimeout(() => {
         initSwiper(".brands-slider");
+        updateButtonsVisibility(".brands-slider");
       }, 0);
-
       break;
+
     case "devices":
       renderDevicesPage();
-         renderBrandsPage();
       setTimeout(() => {
         initSwiper(".devices-slider");
+        updateButtonsVisibility(".devices-slider");
       }, 0);
       break;
+
     case "price":
       renderPricePage();
-         renderBrandsPage();
       setTimeout(() => {
-        initSwiper(".price-slider");
+        initSwiper(".prices-slider");
+        updateButtonsVisibility(".prices-slider");
       }, 0);
       break;
+
     default:
       console.warn("Неизвестная страница: ", page);
   }

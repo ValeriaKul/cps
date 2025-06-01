@@ -97,8 +97,6 @@ export function renderBrandsPage() {
   const mainContent = document.getElementById("main-content");
   mainContent.innerHTML = html;
   setTimeout(() => {
-    console.log("swiper init");
-    
     initSwiper(".brands-slider");
   }, 50);
 }
