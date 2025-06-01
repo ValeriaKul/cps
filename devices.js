@@ -12,20 +12,14 @@ const html = `
   </div>
   <!-- !слайдер! -->
   <div class="swiper brands-slider devices-slider limited">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-wrapper__devices">
       <div class="swiper-slide brands-slider__slide devices-slider__slide">
         <div class="brands-slider__image devices-slider__image brand-card">
           <p class="image__text">Ремонт ноутбуков </p>
           <img src="./images/icons/go.svg" alt="arrow" />
         </div>
       </div>
-       <div class="swiper-slide brands-slider__slide devices-slider__slide">
-        <div class="brands-slider__image devices-slider__image brand-card">
-          <p class="image__text">Ремонт ноутбуков</p>
-          <img src="./images/icons/go.svg" alt="arrow" />
-        </div>
-      </div>
-       <div class="swiper-slide brands-slider__slide devices-slider__slide">
+      <div class="swiper-slide brands-slider__slide devices-slider__slide">
         <div class="brands-slider__image devices-slider__image brand-card">
           <p class="image__text">Ремонт планшетов</p>
           <img src="./images/icons/go.svg" alt="arrow" />
