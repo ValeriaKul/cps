@@ -1,14 +1,19 @@
-let swiperInstance = null;
+const swiperInstances = new Map();
 
 export function initSwiper(selector) {
   const screenWidth = window.innerWidth;
   const sliderEl = document.querySelector(selector);
+
   if (!sliderEl) return;
 
-  const paginationEl = sliderEl.querySelector(".swiper-pagination");
+  if (sliderEl.swiper) {
+    sliderEl.swiper.destroy(true, true);
+  }
 
-  if (screenWidth < 768 && !swiperInstance) {
-    swiperInstance = new Swiper(sliderEl, {
+  if (screenWidth < 768) {
+    const paginationEl = sliderEl.querySelector(".swiper-pagination");
+
+    const swiper = new Swiper(sliderEl, {
       slidesPerView: "auto",
       spaceBetween: 16,
       pagination: paginationEl
@@ -18,8 +23,7 @@ export function initSwiper(selector) {
           }
         : undefined,
     });
-  } else if (screenWidth >= 768 && swiperInstance) {
-    swiperInstance.destroy(true, true);
-    swiperInstance = null;
+
+    swiperInstances.set(selector, swiper);
   }
 }
