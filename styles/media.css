@@ -285,6 +285,10 @@
     display: none !important;
   }
 
+  .swiper-wrapper.price-wrapper {
+    padding: 0 24px;
+  }
+
   .overlay {
     display: none !important;
   }

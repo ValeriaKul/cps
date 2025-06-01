@@ -42,6 +42,20 @@
   gap: 16px;
 }
 
+.prices-slide {
+  position: relative;
+}
+
+.swiper-slide.prices-slide:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: rgba(234, 234, 234, 1); 
+}
+
 .slide__button {
   display: flex;
   align-items: center;
