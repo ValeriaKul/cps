@@ -113,6 +113,7 @@
   text-align: left;
   word-break: break-word;
   font-size: 16px;
+  color: rgba(27, 28, 33, 1);
 }
 
 .information__button--img-go {
