@@ -6,9 +6,13 @@
   .button__close {
     display: none;
   }
+
 }
 
 @media (min-width: 768px) {
+   .burger-menu {
+    width: 320px;
+  }
   .content {
     gap: 32px;
   }

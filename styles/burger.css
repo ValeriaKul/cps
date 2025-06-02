@@ -1,18 +1,24 @@
-
 .burger-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 320px;
+  width: clamp(320px, 100%, 360px);
+  max-width: 360px;
   height: 100vh;
   background: white;
   z-index: 1000;
   box-shadow: 0 16px 52px rgba(0, 0, 0, 0.2);
   display: flex;
+  gap: 32px;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+.burger-menu__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 .burger-button,
 .burger-menu__left img,
@@ -22,9 +28,6 @@
 .burger-menu__button {
   cursor: pointer;
 }
-.burger-menu__nav {
-  padding-top: 46px;
-}
 .burger-menu__top,
 .burger-menu__left {
   display: flex;
@@ -33,7 +36,7 @@
   align-items: center;
 }
 .burger-menu__top {
-  padding: 16px 24px 0 24px;
+  padding: 16px 24px 0 clamp(16px, 5vw, 24px);
 }
 .burger-menu__left {
   gap: 16px;
@@ -41,15 +44,16 @@
 .burger-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 .burger-menu__item {
   display: flex;
   align-items: center;
-  gap: 24px;
-  font-family: "TT Lakes Neue", sans-serif;
+  gap: clamp(12px, 5vw, 20px);
+  font-family: "TT Lakes", sans-serif;
   font-weight: 300;
   font-size: 16px;
+  line-height: 24px;
   letter-spacing: -0.2px;
 }
 .burger-menu__icon {
@@ -61,27 +65,33 @@
   display: flex;
   gap: 16px;
 }
+.burger-menu__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 0 32px clamp(16px, 5vw, 24px);
+}
 .burger-menu__contacts {
   display: flex;
   flex-direction: column;
-  padding-left: 24px;
-  gap: 16px;
+  gap: 12px;
 }
 .burger-menu__mail {
+  padding-top: 4px;
   font-weight: 300;
 }
 .burger-menu__phone {
   font-family: "TT Lakes", sans-serif;
   font-size: 24px;
   font-weight: 500;
+  line-height: 32px;
 }
 .burger-menu__languages {
   display: flex;
   gap: 7px;
-  padding: 40px 0 32px 24px;
 }
 .burger-menu__button {
-  font-family: "TT Lakes Neue", sans-serif;
+  font-family: "TT Lakes", sans-serif;
   font-size: 16px;
   font-weight: 300;
   border: none;
