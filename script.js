@@ -76,3 +76,20 @@ if (menuToggle) {
     document.body.classList.toggle("menu-open", menuToggle.checked);
   });
 }
+
+document.addEventListener("click", (e) => {
+  const menu = document.querySelector(".burger-menu");
+  const toggle = document.querySelector("#menu-toggle");
+
+  if (
+    window.innerWidth < 1120 &&
+    toggle.checked &&
+    !menu.contains(e.target) &&
+    !e.target.closest("#menu-toggle") &&
+    !e.target.closest(".burger-menu__close")
+  ) {
+    toggle.checked = false;
+    document.body.classList.remove("menu-open");
+  }
+});
+
