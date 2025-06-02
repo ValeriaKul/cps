@@ -15,6 +15,11 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+body:not(.menu-open) .burger-menu {
+  box-shadow: none;
+}
+
 .burger-menu__sections {
   display: flex;
   flex-direction: column;
