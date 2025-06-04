@@ -990,8 +990,8 @@ body.menu-open .overlay {
   color: rgba(126, 126, 130, 1);
 }
 .swiper {
-  width: 100% !important;
-  padding: 0 16px !important;
+  width: 100%;
+  padding: 0 16px;
 }
 .swiper-wrapper.swiper-wrapper__brands {
   height: max-content;
