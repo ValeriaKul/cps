@@ -1,0 +1,54 @@
+.footer {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(217, 255, 245, 1);
+  padding: 16px 4px 19px 4px;
+}
+
+.foofter__text {
+  color: rgba(126, 126, 130, 1);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.text__year,
+.text__company,
+.text__privacy,
+.text__info {
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 35px 24px 25px 24px;
+  }
+
+  .foofter__text {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    align-items: start;
+  }
+
+  .text__year,
+  .text__company {
+    text-align: start;
+  }
+
+  .text__privacy {
+    text-align: center;
+  }
+
+  .text__info {
+    text-align: end;
+  }
+}
+
+@media (min-width: 1120px) {
+  .footer {
+    padding: 32px 31px 21px 31px;
+  }
+}

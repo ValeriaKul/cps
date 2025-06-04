@@ -1,0 +1,123 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1 0 auto;
+}
+
+.main__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 24px;
+}
+
+.main__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__title-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.main__title-heading h1 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.main__buttons {
+  display: none;
+  gap: 25px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(246, 246, 246, 1);
+}
+
+.services-list__items {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin-left: 16px;
+  gap: 5px;
+}
+
+.services-list__items::-webkit-scrollbar {
+  display: none;
+}
+
+.services-list__item {
+  border: 2px solid transparent;
+  color: rgba(126, 126, 130, 1);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  font-size: 16px;
+
+}
+
+.services-list__item:hover, .services-list__item:focus,
+.services-list__item--active {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid rgba(60, 248, 206, 0.5);
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: rgba(246, 246, 246, 1);
+  margin: 0 auto;
+}
+
+.about-us__info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about-us__text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 16px;
+  margin: 0 16px;
+}
+
+.about-us__paragraph--secondary {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.about-us.expanded .about-us__paragraph--secondary {
+  max-height: 500px;
+}
+
+.about-us > div:last-child img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-right: 16px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1120px) {
+  
+}
