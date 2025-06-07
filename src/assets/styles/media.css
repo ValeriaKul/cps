@@ -9,6 +9,7 @@
 }
 
 @media (min-width: 768px) {
+  
   .burger-menu {
     width: 320px;
   }
@@ -275,7 +276,7 @@
   }
 
   .burger-wrapper {
-    display: flex;
+    display: flex !important;
     flex-shrink: 0;
     width: 320px;
   }
@@ -284,7 +285,6 @@
     position: relative;
     transform: none !important;
     width: 320px;
-    height: 100vh !important;
     height: auto;
     box-shadow: none;
     z-index: auto;
@@ -294,7 +294,6 @@
     padding: 30px 31px 0 22px;
   }
 
-  #menu-toggle,
   .burger-button,
   .burger-menu__close {
     display: none !important;
@@ -302,10 +301,6 @@
 
   .swiper-wrapper.price-wrapper {
     padding: 0 24px;
-  }
-
-  .overlay {
-    display: none !important;
   }
 
   .footer {

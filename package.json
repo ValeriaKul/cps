@@ -6,7 +6,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "start": "cross-env NODE_ENV=development webpack serve --mode development",
-    "stop": "lsof -i tcp:3000 | awk 'NR>1 {print $2}' | xargs kill -9 || echo 'No process found on port 3000'",
+    "stop": "lsof -i tcp:8080 | awk 'NR>1 {print $2}' | xargs kill -9 || echo 'No process found on port 8080'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

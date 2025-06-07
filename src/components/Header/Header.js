@@ -14,9 +14,9 @@ export function createHeader() {
         <div class="header__menu">
           <nav class="header__nav">
             <div class="header__left-side">
-              <label for="menu-toggle" class="burger-button">
-                <img src="${burgerIcon}" alt="open menu" />
-              </label>
+             <button class="burger-open-btn" aria-label="Открыть меню">
+              <img src="${burgerIcon}" alt="menu" />
+              </button>
               <img
                 class="header__slash"
                 src="${slashIcon}"
@@ -29,15 +29,15 @@ export function createHeader() {
             </div>
             <div class="header__right-side">
               <div class="header__contacts">
-                <a href="tel:+9780000000"
-                  ><img src="${callIcon}" alt="phone"
-                /></a>
-                <a href="mailto:mail@mail.ru"
-                  ><img src="${chatIcon}" alt="chat"
-                /></a>
-                <a href="#"
-                  ><img src="${profileIcon}" alt="your_profile"
-                /></a>
+                <button class="call-btn" data-action="open-call">
+                   <img src="${callIcon}" alt="phone"/>
+                </button>
+                <button class="call-btn" data-action="open-chat">
+                  <img src="${chatIcon}" alt="chat"/>
+                </button>
+                <button class="call-btn" data-action="open-profile">
+                  <img src="${profileIcon}" alt="profile"/>
+                </button>
               </div>
               <img
                 class="header__slash--center"

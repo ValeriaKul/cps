@@ -32,3 +32,9 @@ video {
   height: auto;
   display: block;
 }
+
+button {
+  border:none;
+  background-color: transparent;
+  cursor: pointer;
+}

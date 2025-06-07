@@ -28,19 +28,11 @@ body:not(.menu-open) .burger-menu {
   box-shadow: none;
 }
 
-.burger-wrapper #menu-toggle:checked + .burger-menu {
+body.menu-open .burger-menu {
   transform: translateX(0);
 }
 
 .menu-toggle {
-  display: none;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 998;
   display: none;
 }
 
@@ -156,57 +148,4 @@ body.menu-open .overlay {
 .burger-menu__item--active .burger-menu__link,
 .burger-menu__button--active {
   color: rgba(126, 126, 130, 1);
-}
-@media (min-width: 768px) {
-  .burger-menu {
-    width: 320px;
-  }
-
-  .burger-menu__sections {
-    gap: 46px;
-  }
-
-  .burger-menu__item {
-    gap: 24px;
-  }
-
-  .burger-menu__list {
-    gap: 32px;
-  }
-
-  .burger-menu__bottom {
-    padding: 0 0 32px 24px;
-    gap: 40px;
-  }
-}
-
-@media (min-width: 1120px) {
-  .burger-wrapper {
-    display: flex;
-    flex-shrink: 0;
-    width: 320px;
-  }
-
-  .burger-menu {
-    position: relative;
-    transform: none !important;
-    width: 320px;
-    height: auto;
-    box-shadow: none;
-    z-index: auto;
-  }
-
-  .burger-menu__top {
-    padding: 30px 31px 0 22px;
-  }
-
-  #menu-toggle,
-  .burger-button,
-  .burger-menu__close {
-    display: none !important;
-  }
-
-  .overlay {
-    display: none !important;
-  }
 }
