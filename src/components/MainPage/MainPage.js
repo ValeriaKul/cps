@@ -14,11 +14,15 @@ export function renderMainPage() {
       <div class="main__buttons">
         <button class="button">
           Оставить заявку
+          <span class="icon">
           ${icons.repair}
+          </span>
         </button>
         <button class="button">
           Статус ремонта
+          <span class="icon">
           ${icons.checkstatus}
+          </span>
         </button>
       </div>
     </section>
