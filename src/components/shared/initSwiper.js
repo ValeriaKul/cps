@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle';
+import Swiper from "swiper/bundle";
 
 const swiperInstances = new Map();
 
@@ -18,6 +18,8 @@ export function initSwiper(selector) {
     const swiper = new Swiper(sliderEl, {
       slidesPerView: "auto",
       spaceBetween: 16,
+      slidesOffsetBefore: 16,
+      slidesOffsetAfter: 16,
       pagination: paginationEl
         ? {
             el: paginationEl,

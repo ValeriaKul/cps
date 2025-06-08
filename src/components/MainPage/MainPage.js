@@ -1,5 +1,5 @@
-import { icons } from '../shared/icons.js';
-import picture from '../../assets/images/Picture_Copy.jpg';
+import { icons } from "../shared/icons.js";
+import picture from "../../assets/images/Picture_Copy.jpg";
 
 export function renderMainPage() {
   const mainContent = document.getElementById("main-content");
@@ -28,7 +28,7 @@ export function renderMainPage() {
     </section>
     <section class="services-list" aria-label="Навигация по услугам">
       <ul class="services-list__items">
-        <li class="services-list__item services-list__item--active" data-page="brands">Ремонтируемые бренды</li>
+        <li class="services-list__item services-list__item" data-page="brands">Ремонтируемые бренды</li>
         <li class="services-list__item" data-page="devices">Ремонтируемые устройства</li>
         <li class="services-list__item" data-page="price">Цены на услуги</li>
         <li class="services-list__item" data-page="address">Адреса сервисных центров</li>
@@ -70,7 +70,9 @@ export function renderMainPage() {
 
 function initReadMore() {
   const aboutUsSection = document.querySelector(".about-us");
-  const secondParagraph = document.querySelector(".about-us__paragraph--secondary");
+  const secondParagraph = document.querySelector(
+    ".about-us__paragraph--secondary"
+  );
   const readMoreBtn = document.querySelector(".about-us .read-more");
   const iconSpan = readMoreBtn.querySelector(".expand-icon");
 
@@ -84,7 +86,11 @@ function initReadMore() {
     } else if (width >= 768) {
       secondParagraph.style.display = "";
     } else {
-      secondParagraph.style.display = aboutUsSection.classList.contains("expanded") ? "block" : "none";
+      secondParagraph.style.display = aboutUsSection.classList.contains(
+        "expanded"
+      )
+        ? "block"
+        : "none";
     }
   }
 
@@ -92,7 +98,9 @@ function initReadMore() {
     aboutUsSection.classList.toggle("expanded");
     const isExpanded = aboutUsSection.classList.contains("expanded");
 
-    readMoreBtn.querySelector("p").textContent = isExpanded ? "Скрыть" : "Читать далее";
+    readMoreBtn.querySelector("p").textContent = isExpanded
+      ? "Скрыть"
+      : "Читать далее";
     iconSpan.innerHTML = isExpanded ? icons.expandClose : icons.expand;
 
     updateParagraphVisibility();
@@ -101,4 +109,3 @@ function initReadMore() {
   window.addEventListener("resize", updateParagraphVisibility);
   updateParagraphVisibility();
 }
-

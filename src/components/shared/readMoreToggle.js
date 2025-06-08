@@ -1,35 +1,45 @@
 export function setupButtonToggles(sliderSelector = ".brands-slider") {
-  document.addEventListener("click", function (e) {
-    const readMoreBtn = e.target.closest(".button__read");
-    const closeBtn = e.target.closest(".button__close");
-    const slider = document.querySelector(sliderSelector);
-    if (!slider) return;
+  const slider = document.querySelector(sliderSelector);
+  if (!slider) return;
 
-    if (readMoreBtn) slider.classList.remove("limited");
-    if (closeBtn) slider.classList.add("limited");
+  const parent = slider.parentElement;
+  const readBtn = parent.querySelector(".button__read");
+  const closeBtn = parent.querySelector(".button__close");
+  if (!readBtn || !closeBtn) return;
 
-    updateButtonsVisibility(sliderSelector);
+  readBtn.addEventListener("click", () => {
+    slider.classList.remove("limited");
+    readBtn.classList.add("button--hidden");
+    closeBtn.classList.remove("button--hidden");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    slider.classList.add("limited");
+    closeBtn.classList.add("button--hidden");
+    readBtn.classList.remove("button--hidden");
   });
 }
 
-export function updateButtonsVisibility(sliderSelector = ".brands-slider") {
-  const slider = document.querySelector(sliderSelector);
-  const btnRead = document.querySelector(".button__read");
-  const btnClose = document.querySelector(".button__close");
-  if (!slider || !btnRead || !btnClose) return;
+export function updateButtonsVisibility(selector) {
+  const slider = document.querySelector(selector);
+  if (!slider) return;
 
-  const isLimited = slider.classList.contains("limited");
-  const screenWidth = window.innerWidth;
+  const parent = slider.parentElement;
+  const readBtn = parent.querySelector(".button__read");
+  const closeBtn = parent.querySelector(".button__close");
+  if (!readBtn || !closeBtn) return;
 
-  btnRead.classList.add("button--hidden");
-  btnClose.classList.add("button--hidden");
+  if (window.innerWidth <= 768) {
+    readBtn.classList.add("button--hidden");
+    closeBtn.classList.add("button--hidden");
+    return;
+  }
 
-  if (screenWidth >= 768 && screenWidth < 1582) {
-    if (isLimited) {
-      btnRead.classList.remove("button--hidden");
-    } else {
-      btnClose.classList.remove("button--hidden");
-    }
+  if (slider.classList.contains("limited")) {
+    readBtn.classList.remove("button--hidden");
+    closeBtn.classList.add("button--hidden");
+  } else {
+    readBtn.classList.add("button--hidden");
+    closeBtn.classList.remove("button--hidden");
   }
 }
-

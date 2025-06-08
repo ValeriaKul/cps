@@ -1,11 +1,10 @@
-@use '../../assets/styles/variables' as *;
-
+@use "../../assets/styles/variables" as *;
 
 .header {
   display: block;
   background-color: $color-white;
   width: 100%;
-  border-bottom: 1px solid $color-line;
+  border-bottom: 1px solid $color-border-footer-header;
 }
 
 .header__nav {
@@ -14,22 +13,31 @@
   align-items: center;
   height: 88px;
   padding: 0 $gap-base;
-  gap: 25px; 
+  gap: $gap-base;
 }
 
 .header__left-side,
 .header__right-side {
   display: flex;
-  gap: 25px; 
   align-items: center;
   justify-content: space-between;
 }
-
+.header__left-side {
+  gap: $gap-base;
+}
+.header__right-side {
+  gap: 20px;
+}
 .header__left-side img,
 .header__right-side img {
   height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+.icons__left {
+  display: flex;
+  gap: $gap-base;
 }
 
 .header__slash,
@@ -45,7 +53,8 @@
   height: 32px;
 }
 
-.header .icon, .header .header__slash--center {
+.header .icon,
+.header .header__slash--center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,13 +63,13 @@
 
 .header .icon svg {
   display: block;
-  width: 40px;  
+  width: 40px;
   height: 40px;
   transition: color 0.3s ease;
 }
 
 .header .icon #svg-logo {
-  width: 97px ;
+  width: 97px;
   height: 51px;
   transition: color 0.3s ease;
 }

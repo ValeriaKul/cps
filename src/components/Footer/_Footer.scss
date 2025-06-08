@@ -1,9 +1,9 @@
-@use '../../assets/styles/variables' as *;
+@use "../../assets/styles/variables" as *;
 
 .footer {
   flex-shrink: 0;
-  border-top: 1px solid $color-line;
-  padding: $gap-xl 4px 19px 4px;
+  border-top: 1px solid $color-border-footer-header;
+  padding: 16px 4px 19px 4px;
 }
 
 .foofter__text {

@@ -1,23 +1,25 @@
-import arrow from '../../assets/images/icons/goside.svg';
-import moreIcon from '../../assets/images/icons/more.svg';
-import { initSwiper } from '../shared/initSwiper.js';
+import arrow from "../../assets/images/icons/goside.svg";
+import moreIcon from "../../assets/images/icons/more.svg";
+import { initSwiper } from "../shared/initSwiper.js";
 
 const html = `
 <section class="main__brands prices">
   <div class="brands__title price__title">
     <p class="brands__title-text price__title-text">Цены на услуги</p>
   </div>
-  <div class="prices__header">
-    <span class="item-1">Ремонтные услуги</span>
-    <span class="item-2">Цена</span>
-    <span class="item-3">Срок</span>
-    <span class="item-4"></span>
-  </div>
-  <div class="swiper prices-slider">
-    <div class="swiper-wrapper price-wrapper">
-      ${generateSlides()}
+  <div class="slider__container">
+    <div class="prices__header">
+      <span class="item-1">Ремонтные услуги</span>
+      <span class="item-2">Цена</span>
+      <span class="item-3">Срок</span>
+      <span class="item-4"></span>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper prices-slider fade-left">
+      <div class="swiper-wrapper price-wrapper">
+        ${generateSlides()}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
   <div class="information">
     <p class="information__text">
@@ -35,14 +37,16 @@ const html = `
 
 function generateSlides() {
   const data = [
-    ['Диагностика', 'Бесплатно', '30 мин'],
-    ['Замена дисплея', '1000 ₽', '30–120 мин'],
-    ['Замена полифонического динамика', '1000 ₽', '30–120 мин'],
-    ['Тестирование с заключением', '1000 ₽', '30–120 мин'],
-    ['Замена ПО', '1000 ₽', '30–120 мин'],
+    ["Диагностика", "Бесплатно", "30 мин"],
+    ["Замена дисплея", "1000 ₽", "30–120 мин"],
+    ["Замена полифонического динамика", "1000 ₽", "30–120 мин"],
+    ["Тестирование с заключением", "1000 ₽", "30–120 мин"],
+    ["Замена ПО", "1000 ₽", "30–120 мин"],
   ];
 
-  return data.map(([service, price, time]) => `
+  return data
+    .map(
+      ([service, price, time]) => `
     <div class="swiper-slide prices-slide">
       <div class="prices-slide__item">
         <div class="slide__group item-1">
@@ -64,7 +68,9 @@ function generateSlides() {
         </div>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join("");
 }
 
 export function renderPricePage() {

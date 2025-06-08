@@ -2,22 +2,23 @@ import { icons } from "../shared/icons.js";
 
 export function createBurgerWrapper() {
   const burgerWrapper = document.createElement("div");
-  burgerWrapper.className = "burger-wrapper";
+  burgerWrapper.className = "burger-wrapper ";
   burgerWrapper.innerHTML = ` 
     <div class="burger-menu">
       <div class="burger-menu__sections">
         <div class="burger-menu__top">
           <div class="burger-menu__left">
-            <button class="burger-menu__close" aria-label="Закрыть меню">
+            <button class="burger-menu__close" data-action="close-menu"aria-label="Закрыть меню">
               <span class="icon">${icons.burgerClose}</span>
             </button>
             <a href="#" class="burger-logo" data-page="main" aria-label="На главную">
               <span class="icon-logo">${icons.logo}</span>
             </a>
           </div>
-          <span class="icon icon--search" aria-hidden="true">${icons.search}</span>
+          <span class="icon icon--search" aria-hidden="true">${
+            icons.search
+          }</span>
         </div>
-
         <nav class="burger-menu__nav">
           <ul class="burger-menu__list">
             ${[
@@ -32,9 +33,7 @@ export function createBurgerWrapper() {
             ]
               .map(
                 (item) => `
-                <li class="burger-menu__item ${
-                  item.page === "brands" ? "burger-menu__item--active" : ""
-                }">
+                <li class="burger-menu__item">
                   <span class="icon burger-menu__icon">${icons.highlight}</span>
                   <a href="#" class="burger-menu__link" ${
                     item.page ? `data-page="${item.page}"` : ""

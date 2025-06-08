@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables' as *;
+@use "../../assets/styles/variables" as *;
 
 .devices-slider .brand-card {
   width: 240px;
@@ -15,18 +15,14 @@
   margin-top: auto;
 }
 .devices-slider .brand-card {
-  position: relative; 
-  // width: 240px;
-  // height: 160px;
-  // padding: $gap-base;
-  // display: flex;
-  // flex-direction: column;
+  position: relative;
 }
 
 .image__text {
   position: absolute;
   top: $gap-base;
   left: $gap-base;
+  color: $color-font-main;
 }
 
 .devices-slider .brand-card .icon {

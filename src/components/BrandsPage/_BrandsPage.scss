@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables' as *;
+@use "../../assets/styles/variables" as *;
 @use "sass:color";
 
 .main__brands {
@@ -21,7 +21,6 @@
 
 .swiper {
   width: 100%;
-  padding: 0 $gap-base;
 }
 
 .swiper-wrapper.swiper-wrapper__brands {
@@ -29,7 +28,7 @@
 }
 
 .brands-slider__slide {
-  width: $card-width !important;
+  width: $card-width;
 }
 
 .brand-card {
@@ -46,7 +45,7 @@
 }
 
 .swiper-pagination {
-  position: relative !important;
+  position: relative;
   margin-top: $gap-base;
   display: flex;
   justify-content: center;
@@ -67,7 +66,8 @@
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 0;
 }
 
@@ -78,7 +78,6 @@
 .button__read,
 .button__close {
   gap: $gap-xs;
-  margin-left: $gap-large;
   font-size: $font-size-base;
   letter-spacing: -0.2px;
   color: $color-font-main;
@@ -99,7 +98,7 @@
   width: 8px;
   height: 12px;
   fill: currentColor;
-  color: $color-font-primary; 
+  color: $color-font-primary;
   transition: color 0.3s ease;
 }
 
@@ -111,4 +110,3 @@
 .brand-card:hover .icon svg {
   color: black;
 }
-

@@ -1,16 +1,16 @@
-@use '../../assets/styles/variables' as *;
+@use "../../assets/styles/variables" as *;
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
   flex: 1 0 auto;
 }
 
 .main__menu {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
   padding-top: $gap-large;
 }
 
@@ -23,12 +23,13 @@
 .main__title-heading {
   display: flex;
   align-items: center;
-  gap: 18px; 
+  gap: 18px;
 }
 
 .main__title-heading h1 {
   font-weight: $font-weight-bold;
   font-size: $font-size-heading;
+  color: $color-font-main;
 }
 
 .main__buttons {
@@ -82,7 +83,7 @@
 .about-us {
   display: flex;
   flex-direction: column;
-  gap: $gap-base;
+  gap: 16px;
   background-color: $color-bg-light;
   margin: 0 auto;
 }
@@ -90,15 +91,17 @@
 .about-us__info {
   display: flex;
   flex-direction: column;
-  gap: 15px; 
+  gap: 16px;
+  color: $color-font-main;
 }
 
 .about-us__text {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: $font-size-base;
-  margin: 0 $gap-base;
+  font-size: 14px;
+  padding: 0 16px;
+  letter-spacing: 0.2px;
 }
 
 .about-us__paragraph--secondary {
@@ -116,7 +119,6 @@
   height: auto;
   display: block;
   margin-right: $gap-base;
-  border-radius: 5px;
   margin: 0 auto;
 }
 .main__title .button .icon svg {
@@ -127,4 +129,3 @@
 .button:hover .icon svg {
   color: $color-icons-animation;
 }
-

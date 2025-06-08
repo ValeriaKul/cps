@@ -1,4 +1,4 @@
-import { icons } from '../shared/icons.js';
+import { icons } from "../shared/icons.js";
 
 export function createHeader() {
   const header = document.createElement("header");
@@ -7,7 +7,7 @@ export function createHeader() {
     <div class="header__menu">
       <nav class="header__nav">
         <div class="header__left-side">
-          <button class="burger-open-btn" aria-label="Открыть меню">
+          <button class="burger-open-btn" data-action="open-menu" aria-label="Открыть меню">
             <span class="icon" role="img" aria-hidden="true">${icons.burger}</span>
           </button>
           <span class="header__slash" aria-hidden="true">${icons.divider}</span>
@@ -28,12 +28,14 @@ export function createHeader() {
             </button>
           </div>
           <span class="header__slash--center" aria-hidden="true">${icons.divider}</span>
-          <button class="call-btn" aria-label="Ремонт">
-            <span class="icon" role="img">${icons.repair}</span>
-          </button>
-          <button class="call-btn"aria-label="Проверить статус">
-            <span class="icon" role="img">${icons.checkstatus}</span>
-          </button>
+          <div class="icons__left">
+            <button class="call-btn" aria-label="Ремонт">
+              <span class="icon" role="img">${icons.repair}</span>
+            </button>
+            <button class="call-btn"aria-label="Проверить статус">
+              <span class="icon" role="img">${icons.checkstatus}</span>
+            </button>
+          </div>
         </div>
       </nav>
     </div>

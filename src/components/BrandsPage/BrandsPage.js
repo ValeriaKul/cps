@@ -1,4 +1,4 @@
-import {icons} from '../shared/icons.js';
+import { icons } from "../shared/icons.js";
 
 import expand from "../../assets/images/icons/expand.svg";
 import expandClose from "../../assets/images/icons/expandClose.svg";
@@ -53,7 +53,7 @@ export function renderBrandsPage() {
       <div class="brands__title">
         <p class="brands__title-text">Ремонт техники различных брендов</p>
       </div>
-      <div class="swiper brands-slider limited">
+      <div class="swiper brands-slider limited fade-left">
         <div class="swiper-wrapper swiper-wrapper__brands">
           ${slides}
         </div>

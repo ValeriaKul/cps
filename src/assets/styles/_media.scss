@@ -2,7 +2,7 @@
 
 @media (max-width: 767px) {
   .content {
-    gap: $gap-xxl;
+    gap: $gap-large;
   }
   .button__read,
   .button__close {
@@ -22,10 +22,12 @@
   .header__slash--center {
     display: block;
   }
-
+  .header__left-side {
+    gap: 20px;
+  }
   .header__contacts {
     display: flex;
-    gap: 25px;
+    gap: 16px;
   }
 
   .burger-menu {
@@ -47,27 +49,51 @@
   .content {
     gap: $gap-xl;
   }
+  .main {
+    gap: 32px;
+  }
   .main__title-heading h1 {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .main__menu {
+    gap: 8px;
+  }
+
+  .services-list__items {
+    margin-left: 24px;
   }
   .about-us {
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 24px;
   }
-  .about-us__info,
+
+  .about-us__text {
+    padding: 0;
+  }
+
+  .about-us__info {
+    width: 43.5%;
+    gap: 10px;
+  }
+
   .about-us > div:last-child {
     width: 50%;
   }
   .about-us > div:last-child img {
-    width: 100%;
-    height: auto;
     max-width: 100%;
+    // height: 100%;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
   }
+
+  .read-more {
+    padding: 0 0 14px 25px;
+  }
   .about-us__paragraph--secondary {
-    max-height: 45px;
+    max-height: 38px;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -78,13 +104,20 @@
     box-sizing: border-box;
   }
   .footer {
-    padding: 35px $gap-large 25px $gap-large;
+    padding: 32px 24px 25px 24px;
   }
   .foofter__text {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 35px;
     align-items: start;
+  }
+
+  .text__year,
+  .text__company,
+  .text__privacy,
+  .text__info {
+    letter-spacing: 0px;
   }
   .text__year,
   .text__company {
@@ -96,21 +129,31 @@
   .text__info {
     text-align: end;
   }
-  .button__read {
-    display: flex;
+  // .button__read {
+  //   display: flex;
+  // }
+  .read-more {
+    padding: 0px 0px 14px 0px;
+  }
+  .brand-card {
+    width: 224px;
+  }
+  .read-more.button__read,
+  .read-more.button__close {
+    padding-left: 24px;
   }
   .swiper {
-    padding: 0 $gap-large;
+    padding: 0px 24px;
   }
+
   .swiper-wrapper.swiper-wrapper__brands,
   .swiper-wrapper.swiper-wrapper__devices {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    grid-template-columns: repeat(auto-fit, 224px);
     gap: $gap-base $gap-large;
   }
   .swiper-slide {
-    width: auto !important;
-    margin-right: 0 !important;
+    width: auto;
   }
   .main__brands {
     gap: $gap-large;
@@ -130,40 +173,48 @@
   .prices__header {
     display: grid;
     grid-template-columns:
-      minmax(348px, 1fr)
-      24px
-      minmax(61px, 1fr)
-      0
-      minmax(81px, 1fr)
-      20px
-      1fr;
-    padding-left: $gap-xxl;
+      348px
+      minmax(24px, 1fr)
+      74px
+      minmax(22px, 1fr)
+      83px
+      minmax(20px, 1fr)
+      119px;
+    padding: 8px 40px 0 40px;
     color: $color-font-secondary;
   }
+
+  .slider__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .swiper.prices-slider {
     border-radius: $border-radius;
     padding: 0 $gap-large;
   }
   .swiper-wrapper.price-wrapper {
-    display: grid !important;
+    display: grid;
     grid-auto-rows: auto;
     row-gap: 0;
     column-gap: $gap-large;
     background-color: $color-white;
     border-radius: $border-radius;
     padding: 0 $container-padding;
-    width: auto !important;
+    width: auto;
   }
   .swiper-slide.prices-slide {
     display: grid;
     grid-template-columns:
-      minmax(348px, 1fr)
-      24px
-      minmax(74px, 1fr)
-      22px
-      minmax(81px, 1fr)
-      20px
-      1fr;
+      348px
+      minmax(24px, 1fr)
+      74px
+      minmax(22px, 1fr)
+      83px
+      minmax(20px, 1fr)
+      119px;
+    width: 100%;
     grid-auto-rows: auto;
     row-gap: 0;
     height: 64px;
@@ -190,14 +241,22 @@
     display: none;
   }
   .slide__button {
-    justify-self: end;
+    gap: 8px;
+    justify-content: flex-end;
     position: static;
   }
+  .slide__button img {
+    padding-right: 8px;
+  }
+
   .swiper-pagination {
-    display: none !important;
+    display: none;
   }
   .information {
-    padding: 0 $gap-large;
+    padding: 0 0 0 $gap-large;
+  }
+  .information__text {
+    width: 421px;
   }
 }
 
@@ -211,7 +270,37 @@
   .header {
     display: none;
   }
-
+  .prices__header {
+    padding: 0px 56px;
+  }
+  .brands__title {
+    padding: 16px 32px;
+  }
+  .main__brands {
+    gap: 32px;
+  }
+  .burger-menu__list {
+    gap: 24px;
+  }
+  .main__title-heading {
+    gap: 30px;
+  }
+  .services-list {
+  }
+  .services-list__items {
+    padding: 0px 0 0px 34px;
+    margin: 0;
+  }
+  .services-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 08px 21px 7px 22px;
+    box-sizing: border-box;
+  }
+  .main {
+    gap: 8px;
+  }
   .main__menu {
     padding-top: 42px;
   }
@@ -230,6 +319,7 @@
     justify-content: space-between;
     margin: 0 auto;
     gap: $gap-large;
+    padding: 0px 28px 0px 34px;
   }
   .about-us__info {
     width: 47%;
@@ -240,25 +330,21 @@
   .about-us > div:last-child {
     width: 50%;
   }
-  .about-us > div:last-child img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-  }
+
   .about-us__paragraph--secondary {
     max-height: fit-content;
   }
   .burger-wrapper {
-    display: flex !important;
+    display: flex;
     flex-shrink: 0;
     width: $burger-width;
   }
+  .burger-wrapper.closed {
+    display: block;
+  }
   .burger-menu {
     position: relative;
-    transform: none !important;
+    transform: none;
     width: $burger-width;
     height: auto;
     box-shadow: none;
@@ -269,11 +355,41 @@
   }
   .burger-button,
   .burger-menu__close {
-    display: none !important;
+    display: none;
   }
+
+  .swiper {
+    padding: 0 32px;
+  }
+
   .swiper-wrapper.price-wrapper {
     padding: 0 $gap-large;
   }
+  .swiper-wrapper.swiper-wrapper__brands,
+  .swiper-wrapper.swiper-wrapper__devices {
+    grid-template-columns: repeat(auto-fit, 240px);
+    gap: 16px 32px;
+  }
+  .brand-card {
+    width: 240px;
+  }
+
+  .read-more.button__read,
+  .read-more.button__close {
+    padding-left: 31px;
+  }
+
+  .devices-slider .brand-card {
+    width: 240px;
+  }
+  .swiper.prices-slider {
+    padding: 0 32px;
+  }
+ 
+  .information {
+    padding: 0 0 0 32px;
+  }
+
   .footer {
     padding: 32px 31px 21px 31px;
   }

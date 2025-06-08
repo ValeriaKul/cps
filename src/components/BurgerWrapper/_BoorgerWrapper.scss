@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables' as *;
+@use "../../assets/styles/variables" as *;
 
 .burger-wrapper {
   display: flex;
@@ -17,7 +17,7 @@
   z-index: $z-index-modal;
   box-shadow: 0 $gap-xl $gap-xxxxl $color-shadow;
   display: flex;
-  gap: $gap-xxl;
+  gap: 32px;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
@@ -56,7 +56,7 @@ body.menu-open .overlay {
 }
 
 .burger-menu__top {
-  padding: $gap-base $gap-large 0 clamp($gap-base, 5vw, $gap-large);
+  padding: $gap-base clamp(15px, 5vw, 23px) 0 clamp(15px, 5vw, 23px);
 }
 
 .burger-menu__left {
@@ -72,7 +72,7 @@ body.menu-open .overlay {
 .burger-menu__item {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 5vw, 20px);
+  gap: clamp(12px, 4vw, 20px);
   font-family: $font-main;
   font-weight: $font-weight-regular;
   font-size: $font-size-base;
@@ -93,7 +93,8 @@ body.menu-open .overlay {
 
 .burger-menu__link {
   color: $color-black;
-  transition: filter $transition-default, opacity $transition-default, color $transition-default;
+  transition: filter $transition-default, opacity $transition-default,
+    color $transition-default;
 }
 
 .burger-menu__link:hover,
@@ -107,7 +108,7 @@ body.menu-open .overlay {
   display: flex;
   flex-direction: column;
   gap: $gap-s;
-  padding: 0 0 $gap-xxl clamp($gap-base, 5vw, $gap-large);
+  padding: 0 0 32px clamp($gap-base, 5vw, $gap-large);
 }
 
 .burger-menu__contacts {
@@ -148,7 +149,8 @@ body.menu-open .overlay {
 }
 
 .burger-menu__item--active .burger-menu__link,
-.burger-menu__button--active, .burger-menu__button:hover {
+.burger-menu__button--active,
+.burger-menu__button:hover {
   color: $color-font-secondary;
 }
 
@@ -161,11 +163,21 @@ body.menu-open .overlay {
 
 .burger-menu__item:hover .burger-menu__icon svg,
 .burger-menu .call-btn:hover .icon svg,
-.burger-menu .icon--search:hover svg, .burger-menu__close:hover .icon svg  {
+.burger-menu .icon--search:hover svg,
+.burger-menu__close:hover .icon svg {
   color: $color-icons-animation;
 }
 
 .icon-logo svg {
-  color: inherit !important;
-  transition: none !important;
+  color: inherit;
+  transition: none;
+}
+
+.burger-menu {
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+body.menu-open .burger-menu {
+  transform: translateX(0);
 }

@@ -1,20 +1,23 @@
-import { icons } from '../shared/icons.js';
+import { icons } from "../shared/icons.js";
 
-import expand from '../../assets/images/icons/expand.svg';
-import expandClose from '../../assets/images/icons/expandClose.svg';
+import expand from "../../assets/images/icons/expand.svg";
+import expandClose from "../../assets/images/icons/expandClose.svg";
 
-import { initSwiper } from '../shared/initSwiper.js';
-import { setupButtonToggles, updateButtonsVisibility } from '../shared/readMoreToggle.js';
+import { initSwiper } from "../shared/initSwiper.js";
+import {
+  setupButtonToggles,
+  updateButtonsVisibility,
+} from "../shared/readMoreToggle.js";
 
 export function renderDevicesPage() {
-  const mainContent = document.getElementById('main-content');
+  const mainContent = document.getElementById("main-content");
 
   const deviceTexts = [
-    'Ремонт ноутбуков',
-    'Ремонт планшетов',
-    'Ремонт ПК',
-    'Ремонт мониторов',
-    'Ремонт телевизоров',
+    "Ремонт ноутбуков",
+    "Ремонт планшетов",
+    "Ремонт ПК",
+    "Ремонт мониторов",
+    "Ремонт телевизоров",
   ];
 
   const slides = deviceTexts
@@ -27,7 +30,7 @@ export function renderDevicesPage() {
         </div>
       </div>`
     )
-    .join('');
+    .join("");
 
   const html = `
     <section class="main__brands">
@@ -35,13 +38,12 @@ export function renderDevicesPage() {
         <p class="brands__title-text devices__title-text">Ремонт различных видов техники</p>
       </div>
 
-      <div class="swiper brands-slider devices-slider limited">
-        <div class="swiper-wrapper swiper-wrapper__devices">
+      <div class="swiper brands-slider devices-slider limited fade-left">
+        <div class="swiper-wrapper swiper-wrapper__devices ">
           ${slides}
         </div>
         <div class="swiper-pagination"></div>
       </div>
-
       <button class="read-more button__read button--hidden">
         <div>
           <span class="expand-icon">${icons.expand}<span/>
@@ -58,10 +60,10 @@ export function renderDevicesPage() {
   `;
 
   mainContent.innerHTML = html;
-  setupButtonToggles('.devices-slider');
-  updateButtonsVisibility('.devices-slider');
+  setupButtonToggles(".devices-slider");
+  updateButtonsVisibility(".devices-slider");
 
   setTimeout(() => {
-    initSwiper('.devices-slider');
+    initSwiper(".devices-slider");
   }, 50);
 }

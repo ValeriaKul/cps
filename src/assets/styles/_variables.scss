@@ -1,13 +1,13 @@
 $color-white: #ffffff;
-$color-black: #000000;
+$color-black: #1B1C21;
 $color-bg-light: rgba(246, 246, 246, 1);
 $color-border-light: rgba(234, 234, 234, 1);
-$color-font-main: rgba(27, 28, 33, 1);
-$color-font-secondary: rgba(126, 126, 130, 1);
+$color-font-main: #1B1C21;
+$color-font-secondary: #7E7E82;
 $color-accent: rgba(255, 62, 121, 1);
 $color-accent-hover: #e6006b;
 $color-shadow: rgba(0, 0, 0, 0.2);
-$color-line: rgba(60, 248, 206, 0.5);
+$color-line: #B8FFEC;
 $color-border: rgba(234, 234, 234, 1);
 
 $font-main: 'TT Lakes', sans-serif;
@@ -42,7 +42,6 @@ $z-index-overlay: 998;
 $transition-default: 0.3s ease;
 $transition-fast: 0.2s;
 $hover-filter: brightness(0.9);
-$svg-fill-hover: rgba(27, 28, 33, 0.7);
 
 $card-width: 240px;
 $device-card-height: 160px;
@@ -50,3 +49,5 @@ $device-card-height: 160px;
 $color-font-primary: rgba(65, 246, 215, 1);
 $color-icons: rgba(255, 62, 121, 1);
 $color-icons-animation: rgb(171, 28, 71);
+$color-border-footer-header: #D9FFF5;
+

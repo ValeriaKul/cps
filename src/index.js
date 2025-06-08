@@ -11,52 +11,48 @@ import { renderDevicesPage } from "./components/DevicesPage/DevicesPage.js";
 import { renderPricePage } from "./components/PricePage/PricePage.js";
 
 import { initSwiper } from "./components/shared/initSwiper.js";
-import { updateButtonsVisibility } from "./components/shared/readMoreToggle.js";
+import {
+  setupButtonToggles,
+  updateButtonsVisibility,
+} from "./components/shared/readMoreToggle.js";
 
 import { createModalWindow, initModalLogic } from "./components/Modal/Modal.js";
 
-import faviconIcon from './assets/images/icons/logo-cps.svg';
+import faviconIcon from "./assets/images/icons/logo-cps.svg";
 
-const link = document.createElement('link');
-link.rel = 'icon';
+const link = document.createElement("link");
+link.rel = "icon";
 link.href = faviconIcon;
 document.head.appendChild(link);
 
+function updateBurgerActive(page) {
+  const items = document.querySelectorAll(".burger-menu__item");
+  items.forEach((item) => {
+    const link = item.querySelector("[data-page]");
+    if (link && link.dataset.page === page) {
+      item.classList.add("burger-menu__item--active");
+    } else {
+      item.classList.remove("burger-menu__item--active");
+    }
+  });
+}
+
 function showOverlay(reason) {
   const overlay = document.querySelector(".overlay");
-  overlay.style.display = "block";
-
-  if (reason === "menu") {
-    document.body.classList.add("menu-open");
-    const burgerWrapper = document.querySelector(".burger-wrapper");
-    if (burgerWrapper) burgerWrapper.style.display = "flex";
-  }
-
-  if (reason === "feedback") {
-    document.body.classList.add("feedback-open");
-  }
+  overlay.classList.add("overlay--visible");
+  if (reason === "menu") document.body.classList.add("menu-open");
+  if (reason === "feedback") document.body.classList.add("feedback-open");
 }
 
 function hideOverlay(reason) {
   const overlay = document.querySelector(".overlay");
-
-  if (reason === "menu") {
-    document.body.classList.remove("menu-open");
-    const burgerWrapper = document.querySelector(".burger-wrapper");
-    if (burgerWrapper) burgerWrapper.style.display = "none";
-  }
-
-  if (reason === "feedback") {
-    document.body.classList.remove("feedback-open");
-    const modals = document.querySelectorAll(".modal-feedback");
-    modals.forEach((modal) => (modal.style.display = "none"));
-  }
-
+  if (reason === "menu") document.body.classList.remove("menu-open");
+  if (reason === "feedback") document.body.classList.remove("feedback-open");
   if (
     !document.body.classList.contains("menu-open") &&
     !document.body.classList.contains("feedback-open")
   ) {
-    overlay.style.display = "none";
+    overlay.classList.remove("overlay--visible");
   }
 }
 
@@ -74,14 +70,12 @@ layout.className = "layout";
 
 const header = createHeader();
 const burgerWrapper = createBurgerWrapper();
-burgerWrapper.style.display = "none"; 
 const content = document.createElement("div");
-const main = document.createElement("main");
-const footer = createFooter();
-
 content.className = "content";
+const main = document.createElement("main");
 main.id = "main-content";
 main.className = "main";
+const footer = createFooter();
 
 content.appendChild(main);
 content.appendChild(footer);
@@ -90,10 +84,8 @@ layout.appendChild(burgerWrapper);
 layout.appendChild(content);
 root.appendChild(layout);
 
-const overlay = document.createElement("div");
-overlay.className = "overlay";
-document.body.appendChild(overlay);
-
+document.body.insertAdjacentHTML("beforeend", '<div class="overlay"></div>');
+const overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", () => {
   closeBurger();
   hideOverlay("feedback");
@@ -103,42 +95,39 @@ function renderPage(page) {
   switch (page) {
     case "main":
       renderMainPage();
-      loadSwipers();
       break;
     case "brands":
       renderBrandsPage();
-      loadSwipers();
       break;
     case "devices":
       renderDevicesPage();
-      loadSwipers();
       break;
     case "price":
       renderPricePage();
-      loadSwipers();
       break;
     default:
       console.warn("Неизвестная страница:", page);
   }
+  loadSwipers();
 }
 
 function setupNavigation() {
   document.body.addEventListener("click", (e) => {
     const link = e.target.closest("[data-page]");
     if (!link) return;
-
     e.preventDefault();
     const page = link.dataset.page;
-    renderPage(page);
     closeBurger();
+    updateBurgerActive(page);
+    renderPage(page);
   });
 }
 
 function setupBurgerMenu() {
   document.body.addEventListener("click", (e) => {
+    const openBtn = e.target.closest("[data-action='open-menu']");
+    const closeBtn = e.target.closest("[data-action='close-menu']");
     const menu = document.querySelector(".burger-menu");
-    const openBtn = e.target.closest(".burger-open-btn");
-    const closeBtn = e.target.closest(".burger-menu__close");
 
     if (openBtn) {
       openBurger();
@@ -147,6 +136,11 @@ function setupBurgerMenu() {
       (window.innerWidth < 1120 && !menu.contains(e.target))
     ) {
       closeBurger();
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1120) {
+      hideOverlay("menu");
     }
   });
 }
@@ -187,17 +181,16 @@ initModalLogic(
 );
 
 function loadSwipers() {
-  initSwiper(".brands-slider");
-  initSwiper(".devices-slider");
-  initSwiper(".prices-slider");
-  updateButtonsVisibility(".brands-slider");
-  updateButtonsVisibility(".devices-slider");
-  updateButtonsVisibility(".prices-slider");
+  [".brands-slider", ".devices-slider", ".prices-slider"].forEach(
+    (selector) => {
+      initSwiper(selector);
+      setupButtonToggles(selector);
+      updateButtonsVisibility(selector);
+    }
+  );
 }
 
-window.addEventListener("resize", () => {
-  loadSwipers();
-});
+window.addEventListener("resize", () => loadSwipers());
 
 document.addEventListener("DOMContentLoaded", () => {
   renderMainPage();

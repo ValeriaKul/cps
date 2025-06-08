@@ -27,13 +27,14 @@ body {
 
 .read-more {
   display: flex;
-  gap: $gap-xs;
+  gap: $gap-s;
   font-weight: $font-weight-medium;
   padding-left: $container-padding;
+  letter-spacing: -0.2px;
 }
 
 .button--hidden {
-  display: none !important;
+  display: none;
 }
 
 button,
@@ -66,6 +67,35 @@ body.feedback-open .overlay {
 
 header svg {
   color: $color-icons;
+}
+
+.fade-left {
+  position: relative;
+
+}
+
+.fade-left::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(to left, #F8F8F8 0%, rgba(248, 248, 248, 0.01) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.overlay--visible {
+  display: block;
+}
+
+.burger-wrapper.closed {
+  display: none;
+}
+
+.modal-feedback.closed {
+  display: none;
 }
 
 
