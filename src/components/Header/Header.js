@@ -32,7 +32,7 @@ export function createHeader() {
                 <button class="call-btn" data-action="open-call">
                    <img src="${callIcon}" alt="phone"/>
                 </button>
-                <button class="call-btn" data-action="open-chat">
+                <button class="call-btn" data-action="open-feedback">
                   <img src="${chatIcon}" alt="chat"/>
                 </button>
                 <button class="call-btn" data-action="open-profile">

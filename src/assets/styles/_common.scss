@@ -1,0 +1,60 @@
+@use './variables' as *;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-bg-light;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.read-more {
+  display: flex;
+  gap: $gap-xs;
+  font-weight: $font-weight-medium;
+  padding-left: $container-padding;
+}
+
+.button--hidden {
+  display: none !important;
+}
+
+button,
+.read-more,
+.call-btn {
+  cursor: pointer;
+}
+
+.call-btn {
+  border: none;
+  background-color: $color-white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: $z-index-overlay;
+  display: none;
+}
+
+body.menu-open .overlay,
+body.feedback-open .overlay {
+  display: block;
+}

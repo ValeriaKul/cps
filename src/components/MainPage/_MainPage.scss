@@ -1,3 +1,5 @@
+@use '../../assets/styles/variables' as *;
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,7 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding-top: 24px;
+  padding-top: $gap-large;
 }
 
 .main__title {
@@ -21,12 +23,12 @@
 .main__title-heading {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 18px; 
 }
 
 .main__title-heading h1 {
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-heading;
 }
 
 .main__buttons {
@@ -37,13 +39,13 @@
 .button {
   display: flex;
   align-items: center;
-  gap: 5px;
-  color: #333;
-  font-family: "TT Lakes";
-  font-weight: 500;
-  font-size: 16px;
+  gap: $gap-xs;
+  color: $color-font-main;
+  font-family: $font-main;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
   border: none;
-  background-color: rgba(246, 246, 246, 1);
+  background-color: $color-bg-light;
 }
 
 .services-list__items {
@@ -52,8 +54,8 @@
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
-  margin-left: 16px;
-  gap: 5px;
+  margin-left: $gap-base;
+  gap: $gap-xs;
 }
 
 .services-list__items::-webkit-scrollbar {
@@ -62,47 +64,47 @@
 
 .services-list__item {
   border: 2px solid transparent;
-  color: rgba(126, 126, 130, 1);
+  color: $color-font-secondary;
   cursor: pointer;
   flex-shrink: 0;
-  padding: 5px 10px;
-  font-size: 16px;
-
+  padding: $gap-xs 10px;
+  font-size: $font-size-base;
 }
 
-.services-list__item:hover, .services-list__item:focus,
+.services-list__item:hover,
+.services-list__item:focus,
 .services-list__item--active {
-  background-color: white;
+  background-color: $color-white;
   border-radius: 5px;
-  border: 2px solid rgba(60, 248, 206, 0.5);
+  border: 2px solid $color-line;
 }
 
 .about-us {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  background-color: rgba(246, 246, 246, 1);
+  gap: $gap-base;
+  background-color: $color-bg-light;
   margin: 0 auto;
 }
 
 .about-us__info {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 15px; 
 }
 
 .about-us__text {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: 16px;
-  margin: 0 16px;
+  font-size: $font-size-base;
+  margin: 0 $gap-base;
 }
 
 .about-us__paragraph--secondary {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height $transition-default;
 }
 
 .about-us.expanded .about-us__paragraph--secondary {
@@ -113,11 +115,7 @@
   width: 100%;
   height: auto;
   display: block;
-  margin-right: 16px;
+  margin-right: $gap-base;
   border-radius: 5px;
   margin: 0 auto;
-}
-
-@media (min-width: 1120px) {
-  
 }

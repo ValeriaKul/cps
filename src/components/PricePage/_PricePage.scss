@@ -1,34 +1,38 @@
+@use '../../assets/styles/variables' as *;
+
 .prices__header {
   display: none;
 }
 
 .swiper-wrapper.price-wrapper {
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .swiper.prices-slider {
-  padding: 0 8px;
+  padding: 0 $gap-s;
 }
 
 .swiper-slide.prices-slide {
   width: 260px;
   height: 200px;
-  padding: 16px;
+  padding: $gap-base;
   margin: 0 !important;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 6px;
+  background-color: $color-white;
+  border-radius: $border-radius;
 }
 
 .slide__label,
 .slide__value {
-  font-size: 14px;
+  font-size: $font-size-small;
   letter-spacing: 0.2px;
 }
+
 .slide__label {
-  color: rgba(126, 126, 130, 1);
+  color: $color-font-secondary;
 }
+
 .slide__value {
-  color: rgba(27, 28, 33, 1);
+  color: $color-font-main;
 }
 
 .prices-slide__item {
@@ -36,10 +40,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: $color-white;
+  border-radius: $border-radius-xl;
   box-sizing: border-box;
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .prices-slide {
@@ -53,22 +57,22 @@
   right: 0;
   bottom: 0;
   height: 1px;
-  background-color: rgba(234, 234, 234, 1); 
+  background-color: $color-border;
 }
 
 .slide__button {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: $gap-s;
   justify-content: center;
   width: 119px;
   height: 32px;
-  background-color: rgba(255, 62, 121, 1);
+  background-color: $color-accent;
   border-radius: 16px;
   border: none;
   cursor: pointer;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 700;
+  color: $color-white;
+  font-weight: $font-weight-bold;
   font-size: 12px;
   text-transform: uppercase;
   position: absolute;
@@ -76,32 +80,28 @@
   right: 0px;
 }
 
-.information__text {
-  color: rgba(27, 28, 33, 1);
-  letter-spacing: 0.2px;
-}
 .information {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 0 16px;
+  gap: $gap-base;
+  padding: 0 $gap-base;
 }
 
 .information__text {
-  color: rgba(27, 28, 33, 1);
-  font-size: 14px;
+  color: $color-font-main;
+  font-size: $font-size-small;
   letter-spacing: 0.2px;
   line-height: 20px;
 }
 
 .information__button {
   display: inline;
-  gap: 8px;
-  background-color: rgba(246, 246, 246, 1);
+  gap: $gap-s;
+  background-color: $color-bg-light;
   border: none;
-  font-family: "TT Lakes";
-  font-size: 16px;
-  font-weight: 500;
+  font-family: $font-main;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
   padding: 0;
   max-width: 100%;
   cursor: pointer;
@@ -112,8 +112,8 @@
   display: inline;
   text-align: left;
   word-break: break-word;
-  font-size: 16px;
-  color: rgba(27, 28, 33, 1);
+  font-size: $font-size-base;
+  color: $color-font-main;
 }
 
 .information__button--img-go {

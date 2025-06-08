@@ -1,0 +1,13 @@
+@use './variables' as *;
+@use './reset';
+@use './common';
+@use './font';
+@use '../../components/MainPage/MainPage';
+@use '../../components/Header/Header';
+@use '../../components/Footer/Footer';
+@use '../../components/BurgerWrapper/BoorgerWrapper';
+@use '../../components/BrandsPage/BrandsPage';
+@use '../../components/DevicesPage/DevicesPage';
+@use '../../components/PricePage/PricePage';
+@use '../../components/Modal/Modal';
+@use './media';

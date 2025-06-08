@@ -1,5 +1,5 @@
 import "../src/components/Swiper/Swiper.js";
-import "./assets/styles/index.css";
+import "./assets/styles/index.scss";
 
 import { createHeader } from "./components/Header/Header.js";
 import { createFooter } from "./components/Footer/Footer.js";
@@ -12,10 +12,12 @@ import { renderPricePage } from "./components/PricePage/PricePage.js";
 
 import { initSwiper } from "./components/shared/initSwiper.js";
 import { updateButtonsVisibility } from "./components/shared/readMoreToggle.js";
-import { createModalFeedback, initModalFeedbackLogic } from "./components/ModalFeedback/ModalFeedback.js";
+
+import { createModalWindow, initModalLogic } from "./components/Modal/Modal.js";
 
 function showOverlay(reason) {
   const overlay = document.querySelector(".overlay");
+  overlay.style.display = "block";
 
   if (reason === "menu") {
     document.body.classList.add("menu-open");
@@ -39,6 +41,8 @@ function hideOverlay(reason) {
 
   if (reason === "feedback") {
     document.body.classList.remove("feedback-open");
+    const modals = document.querySelectorAll(".modal-feedback");
+    modals.forEach((modal) => (modal.style.display = "none"));
   }
 
   if (
@@ -63,7 +67,7 @@ layout.className = "layout";
 
 const header = createHeader();
 const burgerWrapper = createBurgerWrapper();
-burgerWrapper.style.display = "none";
+burgerWrapper.style.display = "none"; 
 const content = document.createElement("div");
 const main = document.createElement("main");
 const footer = createFooter();
@@ -90,11 +94,24 @@ overlay.addEventListener("click", () => {
 
 function renderPage(page) {
   switch (page) {
-    case "main": renderMainPage(); loadSwipers(); break;
-    case "brands": renderBrandsPage(); loadSwipers(); break;
-    case "devices": renderDevicesPage(); loadSwipers(); break;
-    case "price": renderPricePage(); loadSwipers(); break;
-    default: console.warn("Неизвестная страница:", page);
+    case "main":
+      renderMainPage();
+      loadSwipers();
+      break;
+    case "brands":
+      renderBrandsPage();
+      loadSwipers();
+      break;
+    case "devices":
+      renderDevicesPage();
+      loadSwipers();
+      break;
+    case "price":
+      renderPricePage();
+      loadSwipers();
+      break;
+    default:
+      console.warn("Неизвестная страница:", page);
   }
 }
 
@@ -118,14 +135,49 @@ function setupBurgerMenu() {
 
     if (openBtn) {
       openBurger();
-    } else if (closeBtn || (window.innerWidth < 1120 && !menu.contains(e.target))) {
+    } else if (
+      closeBtn ||
+      (window.innerWidth < 1120 && !menu.contains(e.target))
+    ) {
       closeBurger();
     }
   });
 }
 
-const feedbackModal = createModalFeedback();
+const feedbackModal = createModalWindow({
+  id: "modalFeedback",
+  title: "Обратная связь",
+  fields: [
+    { type: "text", name: "name", placeholder: "Имя" },
+    { type: "tel", name: "phone", placeholder: "Телефон" },
+    { type: "email", name: "email", placeholder: "Электронная почта" },
+    { type: "textarea", name: "message", placeholder: "Сообщение" },
+  ],
+});
 document.body.appendChild(feedbackModal);
+initModalLogic(
+  "modalFeedback",
+  '[data-action="open-feedback"]',
+  "feedback",
+  showOverlay,
+  hideOverlay
+);
+
+const callModal = createModalWindow({
+  id: "modalCall",
+  title: "Заказать звонок",
+  fields: [
+    { type: "tel", name: "phone", placeholder: "Введите номер телефона" },
+  ],
+});
+document.body.appendChild(callModal);
+initModalLogic(
+  "modalCall",
+  '[data-action="open-call"]',
+  "feedback",
+  showOverlay,
+  hideOverlay
+);
 
 function loadSwipers() {
   initSwiper(".brands-slider");
@@ -145,5 +197,4 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSwipers();
   setupNavigation();
   setupBurgerMenu();
-  initModalFeedbackLogic(showOverlay, hideOverlay);
 });

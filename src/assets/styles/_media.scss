@@ -1,6 +1,8 @@
+@use "./variables" as *;
+
 @media (max-width: 767px) {
   .content {
-    gap: 40px;
+    gap: $gap-xxl;
   }
   .button__read,
   .button__close {
@@ -9,45 +11,53 @@
 }
 
 @media (min-width: 768px) {
-  
+  .header__slash {
+    display: block;
+  }
+
+  .header__nav {
+    padding: 0 24px;
+  }
+
+  .header__slash--center {
+    display: block;
+  }
+
+  .header__contacts {
+    display: flex;
+    gap: 25px;
+  }
+
   .burger-menu {
-    width: 320px;
+    width: $burger-width;
   }
   .burger-menu__sections {
-    gap: 46px;
+    gap: $gap-xxxl;
   }
   .burger-menu__item {
-    gap: 24px;
+    gap: $gap-large;
   }
   .burger-menu__list {
-    gap: 32px;
+    gap: $gap-xl;
   }
   .burger-menu__bottom {
-    padding: 0 0 32px 24px;
-    gap: 40px;
+    padding: 0 0 $gap-xl $gap-large;
+    gap: $gap-xxl;
   }
-
   .content {
-    gap: 32px;
+    gap: $gap-xl;
   }
-
   .main__title-heading h1 {
     font-size: 30px;
   }
-
   .about-us {
     flex-direction: row;
     justify-content: space-between;
   }
-
-  .about-us__info {
-    width: 50%;
-  }
-
+  .about-us__info,
   .about-us > div:last-child {
     width: 50%;
   }
-
   .about-us > div:last-child img {
     width: 100%;
     height: auto;
@@ -56,7 +66,6 @@
     margin: 0 auto;
     border-radius: 5px;
   }
-
   .about-us__paragraph--secondary {
     max-height: 45px;
     -webkit-line-clamp: 2;
@@ -64,16 +73,13 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .devices-slider .brand-card {
     width: 224px;
     box-sizing: border-box;
   }
-
   .footer {
-    padding: 35px 24px 25px 24px;
+    padding: 35px $gap-large 25px $gap-large;
   }
-
   .foofter__text {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -84,55 +90,43 @@
   .text__company {
     text-align: start;
   }
-
   .text__privacy {
     text-align: center;
   }
   .text__info {
     text-align: end;
   }
-
   .button__read {
     display: flex;
   }
-
   .swiper {
-    padding: 0 24px;
+    padding: 0 $gap-large;
   }
   .swiper-wrapper.swiper-wrapper__brands,
   .swiper-wrapper.swiper-wrapper__devices {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
-    gap: 16px 24px;
+    gap: $gap-base $gap-large;
   }
-
   .swiper-slide {
     width: auto !important;
     margin-right: 0 !important;
   }
-  /* !brands! */
   .main__brands {
-    gap: 24px;
+    gap: $gap-large;
   }
   .brands__title {
-    padding: 16px 24px;
+    padding: $gap-base $gap-large;
   }
   .brands-slider.limited {
-    max-height: calc(72px * 2 + 16px);
+    max-height: calc($gap-gigantic * 2 + $gap-base);
     overflow: hidden;
   }
-
-  .brands-slider.limited + .button__read {
-    display: flex;
-    font-family: "TT Lakes";
-  }
-
+  .brands-slider.limited + .button__read,
   .brands-slider:not(.limited) + .button__close {
     display: flex;
-    font-family: "TT Lakes";
+    font-family: $font-main;
   }
-
-  /* !price! */
   .prices__header {
     display: grid;
     grid-template-columns:
@@ -143,25 +137,23 @@
       minmax(81px, 1fr)
       20px
       1fr;
-    padding-left: 40px;
-    color: rgba(126, 126, 130, 1);
+    padding-left: $gap-xxl;
+    color: $color-font-secondary;
   }
-
   .swiper.prices-slider {
-    border-radius: 6px;
-    padding: 0 24px;
+    border-radius: $border-radius;
+    padding: 0 $gap-large;
   }
   .swiper-wrapper.price-wrapper {
     display: grid !important;
     grid-auto-rows: auto;
     row-gap: 0;
-    column-gap: 24px;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 0 16px;
+    column-gap: $gap-large;
+    background-color: $color-white;
+    border-radius: $border-radius;
+    padding: 0 $container-padding;
     width: auto !important;
   }
-
   .swiper-slide.prices-slide {
     display: grid;
     grid-template-columns:
@@ -175,7 +167,7 @@
     grid-auto-rows: auto;
     row-gap: 0;
     height: 64px;
-    border-radius: 6px;
+    border-radius: $border-radius;
     padding: 0;
     align-items: center;
   }
@@ -191,29 +183,21 @@
   .item-4 {
     grid-column: 7;
   }
-
   .prices-slide__item {
-    display: grid;
-    grid-template-columns: 1fr 80px 100px 120px;
-    align-items: center;
     display: contents;
   }
-
   .slide__label {
     display: none;
   }
-
   .slide__button {
     justify-self: end;
     position: static;
   }
-
   .swiper-pagination {
     display: none !important;
   }
-
   .information {
-    padding: 0 24px;
+    padding: 0 $gap-large;
   }
 }
 
@@ -221,47 +205,41 @@
   .layout {
     flex-direction: row;
   }
-
   .content {
-    width: calc(100% - 320px);
+    width: calc(100% - $burger-width);
+  }
+  .header {
+    display: none;
   }
 
   .main__menu {
     padding-top: 42px;
   }
-
   .main__title {
     justify-content: space-between;
     margin-right: 20px;
   }
-
   .main__buttons {
     display: flex;
   }
-
   .services-list__items {
     flex-wrap: wrap;
   }
-
   .about-us {
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    gap: 20px;
+    gap: $gap-large;
   }
-
   .about-us__info {
     width: 47%;
   }
-
   .about-us__text {
     width: 100%;
   }
-
   .about-us > div:last-child {
     width: 50%;
   }
-
   .about-us > div:last-child img {
     width: 100%;
     height: auto;
@@ -270,41 +248,51 @@
     margin: 0 auto;
     border-radius: 5px;
   }
-
   .about-us__paragraph--secondary {
     max-height: fit-content;
   }
-
   .burger-wrapper {
     display: flex !important;
     flex-shrink: 0;
-    width: 320px;
+    width: $burger-width;
   }
-
   .burger-menu {
     position: relative;
     transform: none !important;
-    width: 320px;
+    width: $burger-width;
     height: auto;
     box-shadow: none;
     z-index: auto;
   }
-
   .burger-menu__top {
     padding: 30px 31px 0 22px;
   }
-
   .burger-button,
   .burger-menu__close {
     display: none !important;
   }
-
   .swiper-wrapper.price-wrapper {
-    padding: 0 24px;
+    padding: 0 $gap-large;
   }
-
   .footer {
     padding: 32px 31px 21px 31px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .modal-feedback {
+    max-width: 440px;
+    padding: $gap-xl;
+    border-left: 1px solid rgba(217, 255, 245, 1);
+  }
+  .modal-feedback__top {
+    flex-direction: row;
+    gap: 38px;
+    position: relative;
+    left: -96px;
+  }
+  .title__container {
+    gap: $gap-xl;
   }
 }
 

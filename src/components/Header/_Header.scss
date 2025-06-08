@@ -1,0 +1,41 @@
+@use '../../assets/styles/variables' as *;
+
+.header {
+  display: block;
+  background-color: $color-white;
+  width: 100%;
+  border-bottom: 1px solid $color-line;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  padding: 0 $gap-base;
+  gap: 25px; 
+}
+
+.header__left-side,
+.header__right-side {
+  display: flex;
+  gap: 25px; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__left-side img,
+.header__right-side img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header__slash,
+.header__contacts {
+  display: none;
+}
+
+.header__slash--center {
+  display: block;
+}

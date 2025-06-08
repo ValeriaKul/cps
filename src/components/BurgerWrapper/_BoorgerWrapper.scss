@@ -1,27 +1,29 @@
+@use '../../assets/styles/variables' as *;
+
 .burger-wrapper {
   display: flex;
   flex-shrink: 0;
-  width: 320px;
+  width: $burger-width;
 }
 
 .burger-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: clamp(320px, 100%, 360px);
+  width: clamp($burger-width, 100%, 360px);
   max-width: 360px;
   height: 100vh;
-  background: white;
-  z-index: 1000;
-  box-shadow: 0 16px 52px rgba(0, 0, 0, 0.2);
+  background: $color-white;
+  z-index: $z-index-modal;
+  box-shadow: 0 $gap-xl $gap-xxxxl $color-shadow;
   display: flex;
-  gap: 32px;
+  gap: $gap-xxl;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform $transition-default;
 }
 
 body:not(.menu-open) .burger-menu {
@@ -43,7 +45,7 @@ body.menu-open .overlay {
 .burger-menu__sections {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-large;
 }
 
 .burger-menu__top,
@@ -54,33 +56,33 @@ body.menu-open .overlay {
 }
 
 .burger-menu__top {
-  padding: 16px 24px 0 clamp(16px, 5vw, 24px);
+  padding: $gap-base $gap-large 0 clamp($gap-base, 5vw, $gap-large);
 }
 
 .burger-menu__left {
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .burger-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .burger-menu__item {
   display: flex;
   align-items: center;
   gap: clamp(12px, 5vw, 20px);
-  font-family: "TT Lakes", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
+  font-family: $font-main;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
   line-height: 24px;
 }
 
 .burger-menu__icon {
   height: 32px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity $transition-default;
 }
 
 .burger-menu__item--active .burger-menu__icon,
@@ -90,22 +92,22 @@ body.menu-open .overlay {
 }
 
 .burger-menu__link {
-  color: #000;
-  transition: filter 0.3s, opacity 0.3s, color 0.3s;
+  color: $color-black;
+  transition: filter $transition-default, opacity $transition-default, color $transition-default;
 }
 
 .burger-menu__link:hover,
 .burger-menu__link:focus {
   filter: brightness(0.85);
   opacity: 0.7;
-  color: rgba(126, 126, 130, 1);
+  color: $color-font-secondary;
 }
 
 .burger-menu__bottom {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 0 0 32px clamp(16px, 5vw, 24px);
+  gap: $gap-s;
+  padding: 0 0 $gap-xxl clamp($gap-base, 5vw, $gap-large);
 }
 
 .burger-menu__contacts {
@@ -116,19 +118,19 @@ body.menu-open .overlay {
 
 .burger-menu__mail {
   padding-top: 4px;
-  font-weight: 300;
+  font-weight: $font-weight-regular;
 }
 
 .burger-menu__phone {
-  font-family: "TT Lakes", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+  font-family: $font-main;
+  font-size: $font-size-title;
+  font-weight: $font-weight-medium;
   line-height: 32px;
 }
 
 .burger-menu__icons {
   display: flex;
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .burger-menu__languages {
@@ -137,15 +139,15 @@ body.menu-open .overlay {
 }
 
 .burger-menu__button {
-  font-family: "TT Lakes", sans-serif;
-  font-size: 16px;
-  font-weight: 300;
+  font-family: $font-main;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
   border: none;
-  background-color: white;
-  color: rgba(27, 28, 33, 1);
+  background-color: $color-white;
+  color: $color-font-main;
 }
 
 .burger-menu__item--active .burger-menu__link,
 .burger-menu__button--active {
-  color: rgba(126, 126, 130, 1);
+  color: $color-font-secondary;
 }

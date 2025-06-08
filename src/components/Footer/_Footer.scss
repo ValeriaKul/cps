@@ -1,0 +1,24 @@
+@use '../../assets/styles/variables' as *;
+
+.footer {
+  flex-shrink: 0;
+  border-top: 1px solid $color-line;
+  padding: $gap-xl 4px 19px 4px;
+}
+
+.foofter__text {
+  color: $color-font-secondary;
+  font-size: $font-size-small;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-base;
+  align-items: center;
+}
+
+.text__year,
+.text__company,
+.text__privacy,
+.text__info {
+  text-align: center;
+  letter-spacing: 0.2px;
+}

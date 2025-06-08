@@ -1,55 +1,55 @@
+@use '../../assets/styles/variables' as *;
+
 .main__brands {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-base;
 }
 
 .brands__title {
-  background: linear-gradient(
-    to right,
-    rgba(248, 248, 248, 1),
-    rgba(255, 255, 255, 1)
-  );
-  padding: 16px;
+  background: linear-gradient(to right, $color-bg-light, $color-white);
+  padding: $gap-base;
 }
 
 .brands__title-text {
   text-transform: uppercase;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: rgba(126, 126, 130, 1);
+  color: $color-font-secondary;
 }
+
 .swiper {
   width: 100%;
-  padding: 0 16px;
+  padding: 0 $gap-base;
 }
+
 .swiper-wrapper.swiper-wrapper__brands {
   height: max-content;
 }
 
 .brands-slider__slide {
-  width: 240px !important;
+  width: $card-width !important;
 }
 
 .brand-card {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  width: 240px;
+  width: $card-width;
   height: 72px;
-  padding: 0 16px;
-  background-color: #fff;
-  border: 1px solid rgba(234, 234, 234, 1);
-  border-radius: 6px;
+  padding: 0 $gap-base;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
   box-sizing: border-box;
 }
 
 .swiper-pagination {
   position: relative !important;
-  margin-top: 16px;
+  margin-top: $gap-base;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: $gap-s;
 }
 
 .swiper-pagination-bullet {
@@ -58,29 +58,32 @@
   background-color: rgba(221, 221, 221, 1);
   opacity: 1;
   border-radius: 50%;
-  transition: background-color 0.3s;
+  transition: background-color $transition-default;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 0;
 }
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0;
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
 }
 
 .swiper-pagination-bullet-active {
   background-color: rgba(181, 182, 188, 1);
 }
+
 .button__read,
 .button__close {
-  gap: 8px;
-  margin-left: 24px;
-  font-size: 16px;
+  gap: $gap-xs;
+  margin-left: $gap-large;
+  font-size: $font-size-base;
   letter-spacing: -0.2px;
-  color: rgba(27, 28, 33, 1);
-  background-color: rgba(246, 246, 246, 1);
+  color: $color-font-main;
+  background-color: $color-bg-light;
   border: none;
-  font-family: "TT Lakes";
+  font-family: $font-main;
 }
 
 .slider--mobile {
@@ -88,6 +91,5 @@
 }
 
 .swiper__container {
-  padding-left: 16px;
+  padding-left: $gap-base;
 }
-

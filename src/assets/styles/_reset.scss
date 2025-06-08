@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 *,
 *::before,
 *::after {
@@ -34,7 +36,7 @@ video {
 }
 
 button {
-  border:none;
+  border: none;
   background-color: transparent;
   cursor: pointer;
 }

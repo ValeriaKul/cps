@@ -1,7 +1,9 @@
+@use '../../assets/styles/variables' as *;
+
 .devices-slider .brand-card {
   width: 240px;
   height: 160px;
-  padding: 16px;
+  padding: $gap-base;
 }
 
 .devices-slider .brand-card p {
@@ -12,4 +14,3 @@
   align-self: flex-end;
   margin-top: auto;
 }
-
