@@ -1,0 +1,10 @@
+@use './variables' as *;
+
+@mixin svg-fill-hover {
+  transition: filter $transition-default;
+  
+  &:hover,
+  &:focus {
+    filter: $hover-filter;
+  }
+}

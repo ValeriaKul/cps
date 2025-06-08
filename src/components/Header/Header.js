@@ -1,61 +1,42 @@
-import burgerIcon from "../../assets/images/icons/burger.svg";
-import slashIcon from "../../assets/images/icons/slash.svg";
-import logoIcon from "../../assets/images/icons/logo-cps.svg";
-import callIcon from "../../assets/images/icons/call.svg";
-import chatIcon from "../../assets/images/icons/chat.svg";
-import profileIcon from "../../assets/images/icons/profile.svg";
-import repairIcon from "../../assets/images/icons/repair.svg";
-import checkStatusIcon from "../../assets/images/icons/checkstatus.svg";
+import { icons } from '../shared/icons.js';
 
 export function createHeader() {
   const header = document.createElement("header");
   header.className = "header";
   header.innerHTML = `
-        <div class="header__menu">
-          <nav class="header__nav">
-            <div class="header__left-side">
-             <button class="burger-open-btn" aria-label="Открыть меню">
-              <img src="${burgerIcon}" alt="menu" />
-              </button>
-              <img
-                class="header__slash"
-                src="${slashIcon}"
-                alt="slash"
-                aria-hidden="true"
-              />
-              <a href="#" data-page="main"
-                ><img src="${logoIcon}" alt="Логотип CPS"
-              /></a>
-            </div>
-            <div class="header__right-side">
-              <div class="header__contacts">
-                <button class="call-btn" data-action="open-call">
-                   <img src="${callIcon}" alt="phone"/>
-                </button>
-                <button class="call-btn" data-action="open-feedback">
-                  <img src="${chatIcon}" alt="chat"/>
-                </button>
-                <button class="call-btn" data-action="open-profile">
-                  <img src="${profileIcon}" alt="profile"/>
-                </button>
-              </div>
-              <img
-                class="header__slash--center"
-                src="${slashIcon}"
-                alt=""
-                aria-hidden="true"
-              />
-              <a href="#"
-                ><img src="${repairIcon}" alt="Ремонт"
-              /></a>
-              <a href="#"
-                ><img
-                  src="${checkStatusIcon}"
-                  alt="Проверить статус"
-              /></a>
-            </div>
-          </nav>
+    <div class="header__menu">
+      <nav class="header__nav">
+        <div class="header__left-side">
+          <button class="burger-open-btn" aria-label="Открыть меню">
+            <span class="icon" role="img" aria-hidden="true">${icons.burger}</span>
+          </button>
+          <span class="header__slash" aria-hidden="true">${icons.divider}</span>
+          <button data-page="main" aria-label="На главную">
+            <span class="icon-logo" role="img" aria-hidden="true">${icons.logo}</span>
+          </button>
         </div>
+        <div class="header__right-side">
+          <div class="header__contacts">
+            <button class="call-btn" data-action="open-call" aria-label="Позвонить">
+              <span class="icon" role="img">${icons.call}</span>
+            </button>
+            <button class="call-btn" data-action="open-feedback" aria-label="Чат">
+              <span class="icon" role="img">${icons.chat}</span>
+            </button>
+            <button class="call-btn" data-action="open-profile" aria-label="Профиль">
+              <span class="icon" role="img">${icons.profile}</span>
+            </button>
+          </div>
+          <span class="header__slash--center" aria-hidden="true">${icons.divider}</span>
+          <button class="call-btn" aria-label="Ремонт">
+            <span class="icon" role="img">${icons.repair}</span>
+          </button>
+          <button class="call-btn"aria-label="Проверить статус">
+            <span class="icon" role="img">${icons.checkstatus}</span>
+          </button>
+        </div>
+      </nav>
+    </div>
   `;
   return header;
 }

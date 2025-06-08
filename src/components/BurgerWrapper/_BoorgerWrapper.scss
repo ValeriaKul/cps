@@ -148,6 +148,24 @@ body.menu-open .overlay {
 }
 
 .burger-menu__item--active .burger-menu__link,
-.burger-menu__button--active {
+.burger-menu__button--active, .burger-menu__button:hover {
   color: $color-font-secondary;
+}
+
+.burger-menu .icon svg,
+.burger-menu .burger-menu__icon svg {
+  display: block;
+  color: $color-icons;
+  transition: color 0.3s ease;
+}
+
+.burger-menu__item:hover .burger-menu__icon svg,
+.burger-menu .call-btn:hover .icon svg,
+.burger-menu .icon--search:hover svg, .burger-menu__close:hover .icon svg  {
+  color: $color-icons-animation;
+}
+
+.icon-logo svg {
+  color: inherit !important;
+  transition: none !important;
 }

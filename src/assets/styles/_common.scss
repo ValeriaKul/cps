@@ -1,4 +1,5 @@
 @use './variables' as *;
+// @use '../../assets/styles/mixins' as *;
 
 html,
 body {
@@ -39,6 +40,7 @@ button,
 .read-more,
 .call-btn {
   cursor: pointer;
+//   @include svg-fill-hover;
 }
 
 .call-btn {
@@ -58,3 +60,13 @@ body.menu-open .overlay,
 body.feedback-open .overlay {
   display: block;
 }
+
+.main__title-heading svg, .read-more svg{
+    color: $color-font-primary;
+}
+
+header svg {
+  color: $color-icons;
+}
+
+

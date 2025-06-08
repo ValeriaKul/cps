@@ -1,5 +1,6 @@
 @use '../../assets/styles/variables' as *;
 
+
 .header {
   display: block;
   background-color: $color-white;
@@ -38,4 +39,33 @@
 
 .header__slash--center {
   display: block;
+}
+
+.header__slash {
+  height: 32px;
+}
+
+.header .icon, .header .header__slash--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.header .icon svg {
+  display: block;
+  width: 40px;  
+  height: 40px;
+  transition: color 0.3s ease;
+}
+
+.header .icon #svg-logo {
+  width: 97px ;
+  height: 51px;
+  transition: color 0.3s ease;
+}
+
+.header a:hover .icon svg,
+.header button:hover .icon svg {
+  color: $color-icons-animation;
 }

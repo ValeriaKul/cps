@@ -1,34 +1,52 @@
-// import highlight from '../../assets/images/icons/highlight.svg';
-import expand from '../../assets/images/icons/expand.svg';
-import expandClose from '../../assets/images/icons/expandClose.svg';
+import {icons} from '../shared/icons.js';
 
-import lenovo from '../../assets/images/logo_brands/Lenovo.svg';
-import samsung from '../../assets/images/logo_brands/Samsung.svg';
-import apple from '../../assets/images/logo_brands/Apple.svg';
-import viewsonic from '../../assets/images/logo_brands/viewsonic.svg';
-import bosch from '../../assets/images/logo_brands/bosch.svg';
-import hp from '../../assets/images/logo_brands/hp.svg';
-import acer from '../../assets/images/logo_brands/acer.svg';
-import sony from '../../assets/images/logo_brands/sony.svg';
-import arrow from '../../assets/images/icons/go.svg';
+import expand from "../../assets/images/icons/expand.svg";
+import expandClose from "../../assets/images/icons/expandClose.svg";
 
-import { initSwiper } from '../shared/initSwiper.js';
-import { setupButtonToggles, updateButtonsVisibility } from '../shared/readMoreToggle.js';
+import lenovo from "../../assets/images/logo_brands/Lenovo.svg";
+import samsung from "../../assets/images/logo_brands/Samsung.svg";
+import apple from "../../assets/images/logo_brands/Apple.svg";
+import viewsonic from "../../assets/images/logo_brands/viewsonic.svg";
+import bosch from "../../assets/images/logo_brands/bosch.svg";
+import hp from "../../assets/images/logo_brands/hp.svg";
+import acer from "../../assets/images/logo_brands/acer.svg";
+import sony from "../../assets/images/logo_brands/sony.svg";
+import arrow from "../../assets/images/icons/go.svg";
 
-const logos = [lenovo, samsung, apple, viewsonic, bosch, hp, acer, sony, lenovo, samsung, apple];
+import { initSwiper } from "../shared/initSwiper.js";
+import {
+  setupButtonToggles,
+  updateButtonsVisibility,
+} from "../shared/readMoreToggle.js";
+
+const logos = [
+  lenovo,
+  samsung,
+  apple,
+  viewsonic,
+  bosch,
+  hp,
+  acer,
+  sony,
+  lenovo,
+  samsung,
+  apple,
+];
 
 export function renderBrandsPage() {
-  const mainContent = document.getElementById('main-content');
+  const mainContent = document.getElementById("main-content");
 
-  const slides = logos.map(
-    (logo) => `
+  const slides = logos
+    .map(
+      (logo) => `
       <div class="swiper-slide brands-slider__slide">
-        <div class="brands-slider__image brand-card">
+        <button class="brands-slider__image brand-card">
           <img src="${logo}" alt="brand logo" />
-          <img src="${arrow}" alt="arrow" />
-        </div>
+          <span class="icon">${icons.go}<span/>
+        </button>
       </div>`
-  ).join('');
+    )
+    .join("");
 
   const html = `
     <section class="main__brands">
@@ -53,10 +71,10 @@ export function renderBrandsPage() {
   `;
 
   mainContent.innerHTML = html;
-  setupButtonToggles('.brands-slider');
-  updateButtonsVisibility('.brands-slider');
+  setupButtonToggles(".brands-slider");
+  updateButtonsVisibility(".brands-slider");
 
   setTimeout(() => {
-    initSwiper('.brands-slider');
+    initSwiper(".brands-slider");
   }, 50);
 }

@@ -1,8 +1,4 @@
-import highlight from '../../assets/images/icons/highlight.svg';
-import repair from '../../assets/images/icons/repair.svg';
-import checkstatus from '../../assets/images/icons/checkstatus.svg';
-import expand from '../../assets/images/icons/expand.svg';
-import expandClose from '../../assets/images/icons/expandClose.svg';
+import { icons } from '../shared/icons.js';
 import picture from '../../assets/images/Picture_Copy.jpg';
 
 export function renderMainPage() {
@@ -12,23 +8,23 @@ export function renderMainPage() {
   <div class="main__menu">
     <section class="main__title">
       <div class="main__title-heading">
-        <img src="${highlight}" alt="highlight" />
+        ${icons.highlight}
         <h1>Услуги и сервисы</h1>
       </div>
       <div class="main__buttons">
         <button class="button">
           Оставить заявку
-          <img src="${repair}" alt="Оставить заявку" />
+          ${icons.repair}
         </button>
         <button class="button">
           Статус ремонта
-          <img src="${checkstatus}" alt="Статус ремонта" />
+          ${icons.checkstatus}
         </button>
       </div>
     </section>
     <section class="services-list" aria-label="Навигация по услугам">
       <ul class="services-list__items">
-        <li class="services-list__item" data-page="brands">Ремонтируемые бренды</li>
+        <li class="services-list__item services-list__item--active" data-page="brands">Ремонтируемые бренды</li>
         <li class="services-list__item" data-page="devices">Ремонтируемые устройства</li>
         <li class="services-list__item" data-page="price">Цены на услуги</li>
         <li class="services-list__item" data-page="address">Адреса сервисных центров</li>
@@ -40,20 +36,20 @@ export function renderMainPage() {
   <section class="about-us" aria-label="Information about the company">
     <div class="about-us__info">
       <div class="about-us__text">
-      <p>
-        Мы являемся авторизованным сервисным центром по ремонту техники Dell.
-        Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
-        гарантией производителя.
-      </p>
-      <p class="about-us__paragraph--secondary">
-        Мы успешно работаем с 1992 года и заслужили репутацию надежного
-        партнера, что подтверждает большое количество постоянных клиентов. Мы
-        гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
-        советуют нас родным и близким.
-      </p>
-    </div>
+        <p>
+          Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+          Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
+          гарантией производителя.
+        </p>
+        <p class="about-us__paragraph--secondary">
+          Мы успешно работаем с 1992 года и заслужили репутацию надежного
+          партнера, что подтверждает большое количество постоянных клиентов. Мы
+          гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
+          советуют нас родным и близким.
+        </p>
+      </div>
       <div class="read-more">
-        <img src="${expand}" alt="expand" />
+        <span class="expand-icon">${icons.expand}</span>
         <p>Читать далее</p>
       </div>
     </div>
@@ -65,15 +61,16 @@ export function renderMainPage() {
 
   mainContent.innerHTML = html;
 
-  initReadMore(expand, expandClose);
+  initReadMore();
 }
 
-function initReadMore(expand, expandClose) {
+function initReadMore() {
   const aboutUsSection = document.querySelector(".about-us");
   const secondParagraph = document.querySelector(".about-us__paragraph--secondary");
   const readMoreBtn = document.querySelector(".about-us .read-more");
+  const iconSpan = readMoreBtn.querySelector(".expand-icon");
 
-  if (!aboutUsSection || !secondParagraph || !readMoreBtn) return;
+  if (!aboutUsSection || !secondParagraph || !readMoreBtn || !iconSpan) return;
 
   function updateParagraphVisibility() {
     const width = window.innerWidth;
@@ -92,7 +89,7 @@ function initReadMore(expand, expandClose) {
     const isExpanded = aboutUsSection.classList.contains("expanded");
 
     readMoreBtn.querySelector("p").textContent = isExpanded ? "Скрыть" : "Читать далее";
-    readMoreBtn.querySelector("img").src = isExpanded ? expandClose : expand;
+    iconSpan.innerHTML = isExpanded ? icons.expandClose : icons.expand;
 
     updateParagraphVisibility();
   });
@@ -100,3 +97,4 @@ function initReadMore(expand, expandClose) {
   window.addEventListener("resize", updateParagraphVisibility);
   updateParagraphVisibility();
 }
+
