@@ -14,3 +14,23 @@
   align-self: flex-end;
   margin-top: auto;
 }
+.devices-slider .brand-card {
+  position: relative; 
+  // width: 240px;
+  // height: 160px;
+  // padding: $gap-base;
+  // display: flex;
+  // flex-direction: column;
+}
+
+.image__text {
+  position: absolute;
+  top: $gap-base;
+  left: $gap-base;
+}
+
+.devices-slider .brand-card .icon {
+  position: absolute;
+  right: $gap-base;
+  bottom: $gap-base;
+}

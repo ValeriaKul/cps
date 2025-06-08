@@ -1,4 +1,5 @@
-import arrow from '../../assets/images/icons/go.svg';
+import { icons } from '../shared/icons.js';
+
 import expand from '../../assets/images/icons/expand.svg';
 import expandClose from '../../assets/images/icons/expandClose.svg';
 
@@ -8,6 +9,26 @@ import { setupButtonToggles, updateButtonsVisibility } from '../shared/readMoreT
 export function renderDevicesPage() {
   const mainContent = document.getElementById('main-content');
 
+  const deviceTexts = [
+    'Ремонт ноутбуков',
+    'Ремонт планшетов',
+    'Ремонт ПК',
+    'Ремонт мониторов',
+    'Ремонт телевизоров',
+  ];
+
+  const slides = deviceTexts
+    .map(
+      (text) => `
+      <div class="swiper-slide brands-slider__slide devices-slider__slide">
+        <div class="brands-slider__image devices-slider__image brand-card">
+          <p class="image__text">${text}</p>
+          <span class="icon">${icons.go}</span>
+        </div>
+      </div>`
+    )
+    .join('');
+
   const html = `
     <section class="main__brands">
       <div class="brands__title devices__title">
@@ -16,34 +37,22 @@ export function renderDevicesPage() {
 
       <div class="swiper brands-slider devices-slider limited">
         <div class="swiper-wrapper swiper-wrapper__devices">
-          ${[
-            'Ремонт ноутбуков',
-            'Ремонт планшетов',
-            'Ремонт ПК',
-            'Ремонт мониторов',
-            'Ремонт телевизоров',
-          ]
-            .map(
-              (text) => `
-            <div class="swiper-slide brands-slider__slide devices-slider__slide">
-              <div class="brands-slider__image devices-slider__image brand-card">
-                <p class="image__text">${text}</p>
-                <img src="${arrow}" alt="arrow" />
-              </div>
-            </div>`
-            )
-            .join('')}
+          ${slides}
         </div>
         <div class="swiper-pagination"></div>
       </div>
 
       <button class="read-more button__read button--hidden">
-        <img src="${expand}" alt="expand" />
+        <div>
+          <span class="expand-icon">${icons.expand}<span/>
+        </div>
         <p>Показать все</p>
       </button>
       <button class="read-more button__close button--hidden">
-        <img src="${expandClose}" alt="close" />
-        <p>Скрыть</p>
+         <div>
+          <span class="expand-icon">${icons.expandClose}<span/>
+         </div>
+         <p>Скрыть</p>
       </button>
     </section>
   `;
