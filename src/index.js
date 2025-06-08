@@ -15,6 +15,13 @@ import { updateButtonsVisibility } from "./components/shared/readMoreToggle.js";
 
 import { createModalWindow, initModalLogic } from "./components/Modal/Modal.js";
 
+import faviconIcon from './assets/images/icons/logo-cps.svg';
+
+const link = document.createElement('link');
+link.rel = 'icon';
+link.href = faviconIcon;
+document.head.appendChild(link);
+
 function showOverlay(reason) {
   const overlay = document.querySelector(".overlay");
   overlay.style.display = "block";
