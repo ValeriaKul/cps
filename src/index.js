@@ -195,6 +195,14 @@ function handleResize() {
   }
 }
 
+overlay.addEventListener("click", () => {
+  const isModalOpen = !!document.querySelector('.modal--visible');
+    if (!isModalOpen) {
+    closeBurger();
+    hideOverlay('menu');
+  }
+});
+
 window.addEventListener("resize", () => handleResize());
 
 document.addEventListener("DOMContentLoaded", () => {
