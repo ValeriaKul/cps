@@ -55,7 +55,7 @@ export function initModalLogic(modalId, triggerSelector, reason, showOverlay, hi
 
   const openModal = () => {
     modal.style.display = "flex";
-    modal.style.zIndex = 2000;
+    modal.style.zIndex = 2500;
     overlay.style.zIndex = 2000;
     showOverlay(reason);
     // document.body.classList.add("no-scroll");
