@@ -1,15 +1,31 @@
+
 import Swiper from "swiper/bundle";
 
 const swiperInstances = new Map();
 
-export function initSwiper(selector) {
+export function initSwiper(
+  selector,
+  slidesOffsetBefore = 16,
+  slidesOffsetAfter = 16
+) {
   const screenWidth = window.innerWidth;
+  console.log(
+    "initSwiper:",
+    selector,
+    "before=",
+    slidesOffsetBefore,
+    "after=",
+    slidesOffsetAfter,
+    "screenWidth=",
+    screenWidth
+  );
   const sliderEl = document.querySelector(selector);
 
   if (!sliderEl) return;
 
-  if (sliderEl.swiper) {
-    sliderEl.swiper.destroy(true, true);
+  if (swiperInstances.has(selector)) {
+    swiperInstances.get(selector).destroy(true, true);
+    swiperInstances.delete(selector);
   }
 
   if (screenWidth < 768) {
@@ -18,16 +34,22 @@ export function initSwiper(selector) {
     const swiper = new Swiper(sliderEl, {
       slidesPerView: "auto",
       spaceBetween: 16,
-      slidesOffsetBefore: 16,
-      slidesOffsetAfter: 16,
+      slidesOffsetBefore: slidesOffsetBefore,
+      slidesOffsetAfter: slidesOffsetAfter,
       pagination: paginationEl
         ? {
             el: paginationEl,
             clickable: true,
           }
         : undefined,
+      breakpoints: {
+        768: {
+          enabled: false,
+        },
+      },
     });
 
     swiperInstances.set(selector, swiper);
+    return swiper;
   }
 }

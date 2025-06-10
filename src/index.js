@@ -1,4 +1,5 @@
-import "../src/components/Swiper/Swiper.js";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./assets/styles/index.scss";
 
 import { createHeader } from "./components/Header/Header.js";
@@ -24,6 +25,14 @@ const link = document.createElement("link");
 link.rel = "icon";
 link.href = faviconIcon;
 document.head.appendChild(link);
+
+let isMobile = window.innerWidth < 768;
+
+const swiperConfigs = {
+  ".brands-slider": { before: 16, after: 16 },
+  ".devices-slider": { before: 16, after: 16 },
+  ".prices-slider": { before: 8, after: 8 },
+};
 
 function updateBurgerActive(page) {
   const items = document.querySelectorAll(".burger-menu__item");
@@ -67,6 +76,8 @@ function closeBurger() {
 const root = document.getElementById("root");
 const layout = document.createElement("div");
 layout.className = "layout";
+document.body.insertAdjacentHTML("beforeend", '<div class="overlay"></div>');
+const overlay = document.querySelector(".overlay");
 
 const header = createHeader();
 const burgerWrapper = createBurgerWrapper();
@@ -83,13 +94,6 @@ layout.appendChild(header);
 layout.appendChild(burgerWrapper);
 layout.appendChild(content);
 root.appendChild(layout);
-
-document.body.insertAdjacentHTML("beforeend", '<div class="overlay"></div>');
-const overlay = document.querySelector(".overlay");
-overlay.addEventListener("click", () => {
-  closeBurger();
-  hideOverlay("feedback");
-});
 
 function renderPage(page) {
   switch (page) {
@@ -108,7 +112,6 @@ function renderPage(page) {
     default:
       console.warn("Неизвестная страница:", page);
   }
-  loadSwipers();
 }
 
 function setupNavigation() {
@@ -127,14 +130,9 @@ function setupBurgerMenu() {
   document.body.addEventListener("click", (e) => {
     const openBtn = e.target.closest("[data-action='open-menu']");
     const closeBtn = e.target.closest("[data-action='close-menu']");
-    const menu = document.querySelector(".burger-menu");
-
     if (openBtn) {
       openBurger();
-    } else if (
-      closeBtn ||
-      (window.innerWidth < 1120 && !menu.contains(e.target))
-    ) {
+    } else if (closeBtn) {
       closeBurger();
     }
   });
@@ -181,16 +179,22 @@ initModalLogic(
 );
 
 function loadSwipers() {
-  [".brands-slider", ".devices-slider", ".prices-slider"].forEach(
-    (selector) => {
-      initSwiper(selector);
-      setupButtonToggles(selector);
-      updateButtonsVisibility(selector);
-    }
-  );
+  Object.entries(swiperConfigs).forEach(([selector, { before, after }]) => {
+    initSwiper(selector, before, after);
+    setupButtonToggles(selector);
+    updateButtonsVisibility(selector);
+  });
 }
 
-window.addEventListener("resize", () => loadSwipers());
+function handleResize() {
+  const nowMobile = window.innerWidth < 768;
+  if (nowMobile !== isMobile) {
+    isMobile = nowMobile;
+    loadSwipers();
+  }
+}
+
+window.addEventListener("resize", () => handleResize());
 
 document.addEventListener("DOMContentLoaded", () => {
   renderMainPage();

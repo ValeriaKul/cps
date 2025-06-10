@@ -47,7 +47,7 @@ function generateSlides() {
   return data
     .map(
       ([service, price, time]) => `
-    <div class="swiper-slide prices-slide">
+    <div id="slider-price" class="swiper-slide prices-slide">
       <div class="prices-slide__item">
         <div class="slide__group item-1">
           <span class="slide__label">Ремонтные услуги</span>
@@ -76,5 +76,5 @@ function generateSlides() {
 export function renderPricePage() {
   const mainContent = document.getElementById("main-content");
   mainContent.innerHTML = html;
-  initSwiper(".prices-slider");
+  initSwiper(".prices-slider", 8, 8);
 }

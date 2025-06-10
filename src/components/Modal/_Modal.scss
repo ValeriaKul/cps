@@ -10,7 +10,7 @@
   display: none;
   justify-content: top;
   align-items: start;
-  z-index: $z-index-modal;
+  z-index: 2000;
 }
 
 .modal-feedback {

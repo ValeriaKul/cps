@@ -55,11 +55,15 @@ export function initModalLogic(modalId, triggerSelector, reason, showOverlay, hi
 
   const openModal = () => {
     modal.style.display = "flex";
+    modal.style.zIndex = 2000;
+    overlay.style.zIndex = 2000;
     showOverlay(reason);
     document.body.classList.add("no-scroll");
   };
 
   const closeModal = () => {
+    overlay.style.zIndex = 500;
+    modal.style.zIndex = 1000;
     modal.style.display = "none";
     hideOverlay(reason);
     document.body.classList.remove("no-scroll");
@@ -80,9 +84,4 @@ export function initModalLogic(modalId, triggerSelector, reason, showOverlay, hi
     }
   });
 
-  overlay?.addEventListener("click", () => {
-    if (document.body.classList.contains(`${reason}-open`)) {
-      closeModal();
-    }
-  });
 }

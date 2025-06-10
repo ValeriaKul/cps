@@ -5,15 +5,10 @@
   display: none;
 }
 
-.swiper-wrapper.price-wrapper {
-  gap: $gap-base;
-}
-
 .swiper-slide.prices-slide {
   width: 260px;
   height: 200px;
   padding: $gap-base;
-  margin: 0;
   background-color: $color-white;
   border-radius: $border-radius;
 }
@@ -45,16 +40,6 @@
 
 .prices-slide {
   position: relative;
-}
-
-.swiper-slide.prices-slide:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background-color: $color-border;
 }
 
 .slide__button {
@@ -118,22 +103,7 @@
   vertical-align: middle;
 }
 
-.slide__button {
-  transition: background-color $transition-default, color $transition-default;
-
-  img {
-    transition: filter $transition-default;
-  }
-
-  &:hover {
-    background-color: color.adjust($color-accent, $lightness: -5%);
-
-    img {
-      filter: brightness(0.85);
-    }
-  }
-
-  &:active {
-    background-color: color.adjust($color-accent, $lightness: 10%);
-  }
+.slide__button:hover, .slide__button:hover:active {
+  background-color: $color-white;
+  color: $color-accent;
 }
