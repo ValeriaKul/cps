@@ -1,7 +1,7 @@
 import { icons } from "../shared/icons.js";
 
-import expand from "../../assets/images/icons/expand.svg";
-import expandClose from "../../assets/images/icons/expandClose.svg";
+// import expand from "../../assets/images/icons/expand.svg";
+// import expandClose from "../../assets/images/icons/expandClose.svg";
 
 import { initSwiper } from "../shared/initSwiper.js";
 import {

@@ -1,5 +1,5 @@
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 import "./assets/styles/index.scss";
 
 import { createHeader } from "./components/Header/Header.js";
@@ -29,9 +29,9 @@ document.head.appendChild(link);
 let isMobile = window.innerWidth < 768;
 
 const swiperConfigs = {
-  ".brands-slider": { before: 16, after: 16 },
-  ".devices-slider": { before: 16, after: 16 },
-  ".prices-slider": { before: 8, after: 8 },
+  '.brands-slider': { before: 16, after: 16 },
+  '.devices-slider': { before: 16, after: 16 },
+  '.prices-slider': { before: 8,  after: 8  },
 };
 
 function updateBurgerActive(page) {
@@ -95,6 +95,7 @@ layout.appendChild(burgerWrapper);
 layout.appendChild(content);
 root.appendChild(layout);
 
+
 function renderPage(page) {
   switch (page) {
     case "main":
@@ -128,13 +129,13 @@ function setupNavigation() {
 
 function setupBurgerMenu() {
   document.body.addEventListener("click", (e) => {
-    const openBtn = e.target.closest("[data-action='open-menu']");
-    const closeBtn = e.target.closest("[data-action='close-menu']");
-    if (openBtn) {
-      openBurger();
-    } else if (closeBtn) {
-      closeBurger();
-    }
+   const openBtn  = e.target.closest("[data-action='open-menu']");
+  const closeBtn = e.target.closest("[data-action='close-menu']");
+   if (openBtn) {
+     openBurger();
+   } else if (closeBtn) {
+     closeBurger();
+   }
   });
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 1120) {
@@ -179,7 +180,7 @@ initModalLogic(
 );
 
 function loadSwipers() {
-  Object.entries(swiperConfigs).forEach(([selector, { before, after }]) => {
+ Object.entries(swiperConfigs).forEach(([selector, { before, after }]) => {
     initSwiper(selector, before, after);
     setupButtonToggles(selector);
     updateButtonsVisibility(selector);

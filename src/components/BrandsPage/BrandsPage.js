@@ -11,7 +11,7 @@ import bosch from "../../assets/images/logo_brands/bosch.svg";
 import hp from "../../assets/images/logo_brands/hp.svg";
 import acer from "../../assets/images/logo_brands/acer.svg";
 import sony from "../../assets/images/logo_brands/sony.svg";
-import arrow from "../../assets/images/icons/go.svg";
+// import arrow from "../../assets/images/icons/go.svg";
 
 import { initSwiper } from "../shared/initSwiper.js";
 import {
