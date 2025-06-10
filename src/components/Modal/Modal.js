@@ -58,7 +58,7 @@ export function initModalLogic(modalId, triggerSelector, reason, showOverlay, hi
     modal.style.zIndex = 2000;
     overlay.style.zIndex = 2000;
     showOverlay(reason);
-    document.body.classList.add("no-scroll");
+    // document.body.classList.add("no-scroll");
   };
 
   const closeModal = () => {
@@ -66,7 +66,7 @@ export function initModalLogic(modalId, triggerSelector, reason, showOverlay, hi
     modal.style.zIndex = 1000;
     modal.style.display = "none";
     hideOverlay(reason);
-    document.body.classList.remove("no-scroll");
+    // document.body.classList.remove("no-scroll");
   };
 
   document.querySelectorAll(triggerSelector).forEach((btn) => {

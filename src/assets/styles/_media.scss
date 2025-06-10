@@ -4,13 +4,12 @@
   .content {
     gap: $gap-large;
   }
+
   .button__read,
   .button__close {
     display: none;
   }
 
-  #slider-price {
-  }
   #slider-price:hover,
   #slider-price:active {
     box-shadow: 3px 0px 3px 3px rgba(160, 224, 216, 0.2);
@@ -29,9 +28,11 @@
   .header__slash--center {
     display: block;
   }
+
   .header__left-side {
     gap: 20px;
   }
+
   .header__contacts {
     display: flex;
     gap: 16px;
@@ -40,25 +41,32 @@
   .burger-menu {
     width: $burger-width;
   }
+
   .burger-menu__sections {
     gap: $gap-xxxl;
   }
+
   .burger-menu__item {
     gap: $gap-large;
   }
+
   .burger-menu__list {
     gap: $gap-xl;
   }
+
   .burger-menu__bottom {
     padding: 0 0 $gap-xl $gap-large;
     gap: $gap-xxl;
   }
+
   .content {
     gap: $gap-xl;
   }
+
   .main {
     gap: 32px;
   }
+
   .main__title-heading h1 {
     font-size: 28px;
   }
@@ -70,6 +78,7 @@
   .services-list__items {
     margin-left: 24px;
   }
+
   .about-us {
     flex-direction: row;
     justify-content: space-between;
@@ -88,6 +97,7 @@
   .about-us > div:last-child {
     width: 50%;
   }
+
   .about-us > div:last-child img {
     max-width: 100%;
     display: block;
@@ -98,6 +108,7 @@
   .read-more {
     padding: 0 0 14px 25px;
   }
+
   .about-us__paragraph--secondary {
     max-height: 38px;
     -webkit-line-clamp: 2;
@@ -105,13 +116,16 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
   .devices-slider .brand-card {
     width: 224px;
     box-sizing: border-box;
   }
+
   .footer {
     padding: 32px 24px 25px 24px;
   }
+
   .foofter__text {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,13 +139,16 @@
   .text__info {
     letter-spacing: 0px;
   }
+
   .text__year,
   .text__company {
     text-align: start;
   }
+
   .text__privacy {
     text-align: center;
   }
+
   .text__info {
     text-align: end;
   }
@@ -139,13 +156,16 @@
   .read-more {
     padding: 0px 0px 14px 0px;
   }
+
   .brand-card {
     width: 224px;
   }
+
   .read-more.button__read,
   .read-more.button__close {
     padding-left: 24px;
   }
+
   .swiper {
     padding: 0px 24px;
   }
@@ -156,24 +176,30 @@
     grid-template-columns: repeat(auto-fit, 224px);
     gap: $gap-base $gap-large;
   }
+
   .swiper-slide {
     width: auto;
   }
+
   .main__brands {
     gap: $gap-large;
   }
+
   .brands__title {
     padding: $gap-base $gap-large;
   }
+
   .brands-slider.limited {
     max-height: calc($gap-gigantic * 2 + $gap-base);
     overflow: hidden;
   }
+
   .brands-slider.limited + .button__read,
   .brands-slider:not(.limited) + .button__close {
     display: flex;
     font-family: $font-main;
   }
+
   .prices__header {
     display: grid;
     grid-template-columns:
@@ -198,6 +224,7 @@
     border-radius: $border-radius;
     padding: 0 24px;
   }
+
   .swiper-wrapper.price-wrapper {
     display: grid;
     grid-auto-rows: auto;
@@ -208,6 +235,7 @@
     padding: 0 $container-padding;
     width: auto;
   }
+
   .swiper-slide.prices-slide {
     display: grid;
     grid-template-columns:
@@ -226,21 +254,27 @@
     padding: 0;
     align-items: center;
   }
+
   .item-1 {
     grid-column: 1;
   }
+
   .item-2 {
     grid-column: 3;
   }
+
   .item-3 {
     grid-column: 5;
   }
+
   .item-4 {
     grid-column: 7;
   }
+
   .prices-slide__item {
     display: contents;
   }
+
   .swiper-slide.prices-slide:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -250,14 +284,17 @@
     height: 1px;
     background-color: $color-border;
   }
+
   .slide__label {
     display: none;
   }
+
   .slide__button {
     gap: 8px;
     justify-content: flex-end;
     position: static;
   }
+
   .slide__button img {
     padding-right: 8px;
   }
@@ -265,9 +302,11 @@
   .swiper-pagination {
     display: none;
   }
+
   .information {
     padding: 0 0 0 $gap-large;
   }
+
   .information__text {
     width: 421px;
   }
@@ -298,8 +337,7 @@
   .main__title-heading {
     gap: 30px;
   }
-  .services-list {
-  }
+
   .services-list__items {
     padding: 0px 0 0px 34px;
     margin: 0;

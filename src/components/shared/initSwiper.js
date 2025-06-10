@@ -8,17 +8,7 @@ export function initSwiper(
   slidesOffsetBefore = 16,
   slidesOffsetAfter = 16
 ) {
-  const screenWidth = window.innerWidth;
-  console.log(
-    "initSwiper:",
-    selector,
-    "before=",
-    slidesOffsetBefore,
-    "after=",
-    slidesOffsetAfter,
-    "screenWidth=",
-    screenWidth
-  );
+  
   const sliderEl = document.querySelector(selector);
 
   if (!sliderEl) return;
